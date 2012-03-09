@@ -9,7 +9,11 @@ import java.util.*;
  * @author ttran
  */
 public class Game {
-    
+    private Match match;
+    public Game(Match match)
+    {
+        this.match = match;
+    }
     public void DisplayHelp()
     {
         System.out.println("What do you need help with?");
