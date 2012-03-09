@@ -8,6 +8,6 @@ package assignment3;
  *
  * @author D4rkFr4g
  */
-public class Human {
+public interface ThrowCalculator {
     
 }
