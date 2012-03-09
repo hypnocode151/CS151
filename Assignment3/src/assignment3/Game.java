@@ -1,35 +1,57 @@
+//<<<<<<< HEAD
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//=======
 package assignment3;
-import java.util.*;
+
+import java.util.Scanner;
+
 /**
  *
- * @author ttran
+ * @author Zane melcho
  */
-public class Game {
-    private Match match;
-    public Game(Match match)
-    {
-        this.match = match;
-    }
+public class Game 
+{
+    
+    private static Match aMatch;
+    private static int rounds = 0;
+    
     public void DisplayHelp()
     {
-        System.out.println("What do you need help with?");
+        //System.out.println("What do you need help with?");
     }
     
-    public void MainMenu()
+    public static void MainMenu()
     {
-        System.out.println("Please enter the nunmber of throws");
+        Scanner scan = new Scanner(System.in);
+        
+        //Display logo and prompt for number of throws
+        System.out.println("************************************");
+        System.out.println("*     Rock Paper Scissors 2012     *");
+        System.out.println("*             Hypnocode            *");
+        System.out.println("************************************");
+        System.out.println("\n\n\n\n\n");
+        System.out.println("Please enter the number of throws");
+        rounds = scan.nextInt();
+        
+        System.out.println("\033");
     }
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        MainMenu();
         
-        Scanner scr = new Scanner(System.in);
-        String PlayerInput = scr.next();
-
+        aMatch = new Match(rounds);
         
+        while(!aMatch.isMatchOver())
+        {
+            aMatch.makeThrows();
+        }
+        
+        aMatch.declareWinner();
     }
     
 }
+
