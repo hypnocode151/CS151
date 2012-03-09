@@ -1,9 +1,16 @@
 package assignment3;
+
+import java.io.*;
+import java.util.Scanner;
+
 /**
  *
  * @author Zane melcho
  */
 public class Game {
+    
+    private Match aMatch;
+    private int rounds = 0;
     
     public void DisplayHelp()
     {
@@ -12,14 +19,28 @@ public class Game {
     
     public void MainMenu()
     {
-        //System.out.println("Please enter the number of throws");
-    }
-    public static void main(String[] args) {
-        /*
-        Scanner scr = new Scanner(System.in);
-        String PlayerInput = scr.next();
-        */
+        Scanner scan = new Scanner(System.in);
         
+        //Display logo and prompt for number of throws
+        System.out.println("************************************");
+        System.out.println("*     Rock Paper Scissors 2012     *");
+        System.out.println("*             Hypnocode            *");
+        System.out.println("************************************");
+        System.out.println("\n\n\n\n\n");
+        System.out.println("Please enter the number of throws");
+        rounds = scan.nextInt();
+    }
+    public void main(String[] args) 
+    {
+        MainMenu();
+        aMatch = new Match(rounds);
+        
+        while(!aMatch.isMatchOver())
+        {
+            aMatch.makeThrows();
+        }
+        
+        aMatch.declareWinner();
     }
     
 }
