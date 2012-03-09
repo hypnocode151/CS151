@@ -25,12 +25,20 @@ public class Player
     {
         score++;
     }
+    public int getScore()
+    {
+        return score;
+    }
+    
+   
     
     public void makeThrow()
     {
-        ////???
+        Random randthrow = new Random();
+        int guess = randthrow.nextInt(3);
     }
             
     private int score;
-    private Throw myThrow;
+    
 }
+
