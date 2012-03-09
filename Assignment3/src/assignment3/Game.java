@@ -5,6 +5,8 @@ package assignment3;
  */
 public class Game {
     
+    private Match aMatch;
+    
     public void DisplayHelp()
     {
         //System.out.println("What do you need help with?");
