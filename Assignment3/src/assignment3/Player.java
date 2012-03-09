@@ -32,5 +32,5 @@ public class Player
     }
             
     private int score;
-    private Throw myThrow;
+    //private Throw myThrow;
 }

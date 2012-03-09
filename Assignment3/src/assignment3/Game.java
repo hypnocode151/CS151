@@ -1,23 +1,23 @@
 package assignment3;
 
-import java.io.*;
 import java.util.Scanner;
 
 /**
  *
  * @author Zane melcho
  */
-public class Game {
+public class Game 
+{
     
-    private Match aMatch;
-    private int rounds = 0;
+    private static Match aMatch;
+    private static int rounds = 0;
     
     public void DisplayHelp()
     {
         //System.out.println("What do you need help with?");
     }
     
-    public void MainMenu()
+    public static void MainMenu()
     {
         Scanner scan = new Scanner(System.in);
         
@@ -29,10 +29,13 @@ public class Game {
         System.out.println("\n\n\n\n\n");
         System.out.println("Please enter the number of throws");
         rounds = scan.nextInt();
+        
+        System.out.println("\033");
     }
-    public void main(String[] args) 
+    public static void main(String[] args) 
     {
         MainMenu();
+        
         aMatch = new Match(rounds);
         
         while(!aMatch.isMatchOver())
