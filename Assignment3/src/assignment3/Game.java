@@ -31,10 +31,10 @@ public class Game
     public static void main(String[] args)
     {
         MainMenu();
-        
+        System.out.println(args[0]);
         if (args[0].contains("0123456789"))
         {
-            rounds = Integer.parseInt(args[1]);
+            rounds = Integer.parseInt(args[0]);
         }
         else
         {
