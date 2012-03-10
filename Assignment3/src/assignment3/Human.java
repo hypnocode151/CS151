@@ -1,7 +1,3 @@
-/*
-* To change this template, choose Tools | Templates
-* and open the template in the editor.
-*/
 package assignment3;
 /**
 *
@@ -9,9 +5,9 @@ package assignment3;
 */
 public class Human extends Player
 {
-    public void setThrow(Throw throw)
+    public void setThrow(Throw aThrow)
     {
-        
+        myThrow = aThrow;
     }
 }
 
