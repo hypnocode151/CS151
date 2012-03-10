@@ -6,7 +6,6 @@ package assignment3;
  */
 public abstract class CommandRequestor
 {
-
     public static CommandRequestor makeRequestor(RequestType type)
     {
         switch (type)
@@ -17,5 +16,5 @@ public abstract class CommandRequestor
         return null;
     }
     
-    public abstract Command generateCommand();
+    public abstract Command requestCommand();
 }

@@ -12,7 +12,7 @@ public class CommandTextRequest extends CommandRequestor
     String input = "";
     
     @Override
-    public Command generateCommand()
+    public Command requestCommand()
     {
         while (true)
         {
