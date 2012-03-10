@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Zane Melcho, Bao
  */
-public class ThrowTextRequest 
+public class CommandTextRequest 
 {
     Scanner sc = new Scanner(System.in);
     String input = "";
