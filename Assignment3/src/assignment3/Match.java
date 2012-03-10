@@ -71,7 +71,7 @@ public class Match
         }
         else
         {
-            System.out.println("This game is tie");
+            System.out.println("This game is a tie");
         }
     }
     
