@@ -1,9 +1,9 @@
 package assignment3;
 
 /**
- *
- * @author D4rkFr4g
- */
+*
+* @author D4rkFr4g
+*/
 public abstract class CommandRequestor
 {
 
@@ -11,8 +11,8 @@ public abstract class CommandRequestor
     {
         switch (type)
         {
-            case TEXTREQUEST: 
-                return new CommandTextRequest();         
+            case TEXTREQUEST:
+                return new CommandTextRequest();
         }
         return null;
     }

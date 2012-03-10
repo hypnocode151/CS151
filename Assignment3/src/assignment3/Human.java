@@ -1,13 +1,18 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
+*/
 package assignment3;
 /**
- *
- * @author D4rkFr4g
- */
+*
+* @author D4rkFr4g
+*/
 public class Human extends Player
 {
-
+    public void setThrow(Throw throw)
+    {
+        
+    }
 }
+
+

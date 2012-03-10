@@ -3,9 +3,9 @@ package assignment3;
 import java.util.Scanner;
 
 /**
- *
- * @author Zane Melcho, Bao
- */
+*
+* @author Zane Melcho, Bao
+*/
 public class CommandTextRequest extends CommandRequestor
 {
     Scanner sc = new Scanner(System.in);
@@ -23,9 +23,9 @@ public class CommandTextRequest extends CommandRequestor
             input = sc.next().toLowerCase();
 
             // Input is a throw.
-            if (input.equals("r") || input.equals("p") || input.equals("s")) 
+            if (input.equals("r") || input.equals("p") || input.equals("s"))
             {
-                switch (input) 
+                switch (input)
                 {
                     case "r":
                         return Command.THROWROCK;
@@ -37,13 +37,13 @@ public class CommandTextRequest extends CommandRequestor
             }
 
             // Input is an option command or unrecognized.
-            else 
+            else
             {
-                if (input.equals("help")) 
+                if (input.equals("help"))
                     return Command.HELP;
                 else if (input.equals("score"))
                     return Command.SCORE;
-                else 
+                else
                 {
                     System.out.printf("Unrecognized command. Type 'help' for info.\n");
                 }

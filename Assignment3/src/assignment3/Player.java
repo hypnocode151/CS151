@@ -1,12 +1,11 @@
-
 package assignment3;
 
 import java.util.*;
 /**
- *
- * @author ttran
- */
-public class Player 
+*
+* @author ttran
+*/
+public class Player
 {
     
     Throw myThrow;
@@ -44,7 +43,7 @@ public class Player
             return 1;
         
         if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.SCISSOR)
-            return 2; 
+            return 2;
               
         return 0;
     }

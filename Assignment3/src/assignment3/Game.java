@@ -3,11 +3,11 @@ package assignment3;
 import java.util.Scanner;
 
 /**
- *
- * @author Zane melcho
- * 3/8/2012
- */
-public class Game 
+*
+* @author Zane melcho
+* 3/8/2012
+*/
+public class Game
 {
     
     private static Match aMatch;
@@ -19,8 +19,8 @@ public class Game
         
         //Display logo and prompt for number of throws
         System.out.println("************************************");
-        System.out.println("*     Rock Paper Scissors 2012     *");
-        System.out.println("*             Hypnocode            *");
+        System.out.println("* Rock Paper Scissors 2012 *");
+        System.out.println("* Hypnocode *");
         System.out.println("************************************");
         System.out.println("\n\n\n\n\n");
         //System.out.println("Please enter the number of throws");
@@ -28,7 +28,7 @@ public class Game
         
         System.out.println("\033");
     }
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         MainMenu();
         
