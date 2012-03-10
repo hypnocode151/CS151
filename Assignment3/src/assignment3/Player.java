@@ -19,7 +19,7 @@ public class Player
     
     public int compareThrows(Player player, Player player2)
     {
-        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.ROCK)
+        if(player.myThrow == Throw.ROCK && player2.myThrow == Player.Throw.ROCK)
         return 0;
        
         if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.PAPER)

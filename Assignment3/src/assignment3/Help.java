@@ -2,11 +2,12 @@ package assignment3;
 
 /**
  *
- * @author D4rkFr4g
+ * @author Bao
  */
 public class Help 
 {
-    public static void displayHelp() {
+    public static void displayHelp() 
+    {
         System.out.printf("\nCmds:\n"
             + "%10s - throw rock, paper, or scissors\n"
             + "%10s - display this help message\n"
