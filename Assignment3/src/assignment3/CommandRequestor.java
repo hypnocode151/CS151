@@ -4,7 +4,18 @@ package assignment3;
  *
  * @author D4rkFr4g
  */
-public interface CommandRequestor
+public abstract class CommandRequestor
 {
-    Command generateCommand();
+
+    public static CommandRequestor makeRequestor(RequestType type)
+    {
+        switch (type)
+        {
+            case TEXTREQUEST: 
+                return new CommandTextRequest();         
+        }
+        return null;
+    }
+    
+    public abstract Command generateCommand();
 }

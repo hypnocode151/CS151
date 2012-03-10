@@ -4,11 +4,11 @@ package assignment3;
  * @author ttran
  */
 public class Match 
-
 {
     private Player human = new Human();
     private Player computer = new Computer();
     private int round;
+    RequestType type = RequestType.TEXTREQUEST;
     
     public Match(int round) 
     {
@@ -18,7 +18,33 @@ public class Match
     
     public void makeThrows()
     {
-        human.makeThrow();
+        CommandRequestor cr = CommandRequestor.makeRequestor(type);
+        
+        switch (cr.generateCommand())
+        {
+            case THROWROCK:
+                human.setThrow(Throw.ROCK);
+                break;
+            case THROWPAPER:
+                human.setThrow(Throw.PAPER);
+                break;
+            case THROWSCISSORS:
+                human.setThrow(Throw.SCISSORS);
+                break;
+            case HELP:
+                Help.displayHelp();
+            case SCORE:
+                System.out.printf(""
+                    + "%10s: %d\n"
+                    + "%10s: %d\n"
+                    , "You", human.getScore()
+                    , "Computer", computer.getScore());
+                break;
+            case QUIT:
+                round = 0;
+                break;
+        }
+        
         computer.makeThrow();
         round--;
     }
@@ -43,9 +69,10 @@ public class Match
     
     public boolean isMatchOver()
     {
-        if(round == 0)
+        if(round < 1)
             return true;
         else
             return false;
     }
 }
+

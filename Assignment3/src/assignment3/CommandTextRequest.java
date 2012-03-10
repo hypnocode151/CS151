@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment3;
 
 import java.util.Scanner;
@@ -10,12 +6,13 @@ import java.util.Scanner;
  *
  * @author Zane Melcho, Bao
  */
-public class CommandTextRequest 
+public class CommandTextRequest extends CommandRequestor
 {
     Scanner sc = new Scanner(System.in);
     String input = "";
     
-    Command generateThrow()
+    @Override
+    public Command generateCommand()
     {
         while (true)
         {
