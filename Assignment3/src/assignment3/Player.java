@@ -53,7 +53,7 @@ public class Player
             System.out.println("Human = Paper\tComputer = Scissors");
             System.out.println("Computer wins Round!");
         }
-        else
+        else 
             System.out.println("It was a tie!");
         
         System.out.println();

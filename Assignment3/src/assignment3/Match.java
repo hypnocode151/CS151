@@ -8,6 +8,7 @@ public class Match
     private Human human = new Human();
     private Computer computer = new Computer();
     private int round;
+
     RequestType type = RequestType.TEXTREQUEST;
     
     public Match(int round)
@@ -26,21 +27,27 @@ public class Match
     
     public void makeThrows()
     {
+        boolean madeThrow = false;
+        
         CommandRequestor cr = CommandRequestor.makeRequestor(type);
         
         switch (cr.requestCommand())
         {
             case THROWROCK:
                 human.setThrow(Throw.ROCK);
+                madeThrow = true;
                 break;
             case THROWPAPER:
                 human.setThrow(Throw.PAPER);
+                madeThrow = true;
                 break;
             case THROWSCISSORS:
                 human.setThrow(Throw.SCISSORS);
+                madeThrow = true;
                 break;
             case HELP:
                 Help.displayHelp();
+                break;
             case SCORE:
                 displayScores();
                 break;
@@ -49,7 +56,7 @@ public class Match
                 break;
         }
         
-        if (round > 0)
+        if (round > 0 && madeThrow)
         {
             computer.makeThrow();
             human.compareThrows((Player) computer);
