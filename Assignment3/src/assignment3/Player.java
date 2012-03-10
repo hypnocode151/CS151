@@ -18,31 +18,31 @@ public class Player
     
     public int compareThrows(Player player, Player player2)
     {
-        if(player.myThrow == Throw.ROCK && player2.myThrow == Player.Throw.ROCK)
+        if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.ROCK)
         return 0;
        
-        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.PAPER)
+        if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.PAPER)
             return 1;
         
-        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.SCISSOR)
+        if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.SCISSOR)
             return 2;
         
-        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.PAPER)
+        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.PAPER)
             return 1;
         
-        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.ROCK)
+        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.ROCK)
             return 2;
          
-        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.SCISSOR)
+        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.SCISSOR)
             return 0;
-          
-        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.PAPER)
+        
+        if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.PAPER)
             return 0;
            
-        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.ROCK)
+        if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.ROCK)
             return 1;
         
-        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.SCISSOR)
+        if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.SCISSOR)
             return 2;
               
         return 0;
