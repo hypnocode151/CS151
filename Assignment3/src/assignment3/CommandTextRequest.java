@@ -17,41 +17,43 @@ public class CommandTextRequest
     
     Command generateThrow()
     {
-        System.out.printf("Let's play!\n"
-        + "Enter 'help' for options.\n"
-        + "To throw, enter 'r' for rock, 'p' for paper, or 's' for scissors.\n");
-                   
-        input = sc.next().toLowerCase();
-            
-        // Input is a throw.
-        if (input.equals("r") || input.equals("p") || input.equals("s")) 
+        while (true)
         {
-            switch (input) 
+            System.out.printf("Let's play!\n"
+            + "Enter 'help' for options.\n"
+            + "To throw, enter 'r' for rock, 'p' for paper, or 's' for scissors.\n");
+
+            input = sc.next().toLowerCase();
+
+            // Input is a throw.
+            if (input.equals("r") || input.equals("p") || input.equals("s")) 
             {
-                case "r":
-                    return THROWROCK;
-                    break;
-                case "p":
-                    return THROWPAPER;
-                    break;
-                case "s":
-                    return THROWSCISSORS;
-                    break;
+                switch (input) 
+                {
+                    case "r":
+                        return Command.THROWROCK;
+                        break;
+                    case "p":
+                        return Command.THROWPAPER;
+                        break;
+                    case "s":
+                        return Command.THROWSCISSORS;
+                        break;
+                }
             }
-        }
-            
-        // Input is an option command or unrecognized.
-        else 
-        {
-            if (input.equals("help")) 
-                return HELP;
+
+            // Input is an option command or unrecognized.
             else 
             {
-                System.out.printf("Unrecognized command. Type 'help' for info.\n");
+                if (input.equals("help")) 
+                    return Command.HELP;
+                else if (input.equals("score"))
+                    return Command.SCORE;
+                else 
+                {
+                    System.out.printf("Unrecognized command. Type 'help' for info.\n");
+                }
             }
         }
-        
-        
-        return null;
     }
 }
