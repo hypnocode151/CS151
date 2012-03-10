@@ -32,13 +32,10 @@ public class CommandTextRequest
                 {
                     case "r":
                         return Command.THROWROCK;
-                        break;
                     case "p":
                         return Command.THROWPAPER;
-                        break;
                     case "s":
                         return Command.THROWSCISSORS;
-                        break;
                 }
             }
 
