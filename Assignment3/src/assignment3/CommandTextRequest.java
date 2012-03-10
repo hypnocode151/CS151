@@ -29,13 +29,13 @@ public class CommandTextRequest
             switch (input) 
             {
                 case "r":
-                    human.makeThrow(Throw.Sign.ROCK);
+                    human.makeThrow(Throw.ROCK);
                     break;
                 case "p":
-                    human.makeThrow(Throw.Sign.PAPER);
+                    human.makeThrow(Throw.PAPER);
                     break;
                 case "s":
-                    human.makeThrow(Throw.Sign.SCISSORS);
+                    human.makeThrow(Throw.SCISSORS);
                     break;
             }
         }

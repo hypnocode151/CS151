@@ -10,4 +10,13 @@ package assignment3;
 public class Computer extends Player
 {
     
+    public Computer ()
+    {
+        super();
+    }
+    
+    public void makeThrow()
+    {
+        super.myThrow = ThrowRandom.generateThrow();
+    }
 }
