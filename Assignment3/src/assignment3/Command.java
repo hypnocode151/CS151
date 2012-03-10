@@ -6,6 +6,6 @@ package assignment3;
  */
 public enum Command 
 {
-    ROCK,PAPER,SCISSORS,HELP,SCORE,QUIT
+    THROWROCK,THROWPAPER,THROWSCISSORS,HELP,SCORE,QUIT
     
 }

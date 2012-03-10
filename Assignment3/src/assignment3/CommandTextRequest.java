@@ -15,7 +15,7 @@ public class CommandTextRequest
     Scanner sc = new Scanner(System.in);
     String input = "";
     
-    Throw generateThrow()
+    Command generateThrow()
     {
         System.out.printf("Let's play!\n"
         + "Enter 'help' for options.\n"
@@ -29,13 +29,13 @@ public class CommandTextRequest
             switch (input) 
             {
                 case "r":
-                    human.makeThrow(Throw.Sign.ROCK);
+                    return THROWROCK;
                     break;
                 case "p":
-                    human.makeThrow(Throw.Sign.PAPER);
+                    return THROWPAPER;
                     break;
                 case "s":
-                    human.makeThrow(Throw.Sign.SCISSORS);
+                    return THROWSCISSORS;
                     break;
             }
         }
@@ -44,7 +44,7 @@ public class CommandTextRequest
         else 
         {
             if (input.equals("help")) 
-                Help.displayHelp();
+                return HELP;
             else 
             {
                 System.out.printf("Unrecognized command. Type 'help' for info.\n");
