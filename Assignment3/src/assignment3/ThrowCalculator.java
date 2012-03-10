@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -6,7 +7,7 @@ package assignment3;
 
 /**
  *
- * @author D4rkFr4g
+ * @author Hypnocode
  */
 public abstract class ThrowCalculator 
 {
@@ -23,3 +24,4 @@ public abstract class ThrowCalculator
     
     public abstract Throw generateThrow();        
 }
+  

@@ -1,8 +1,9 @@
+
 package assignment3;
 import java.util.Random;
 /**
  *
- * @author Tin
+ * @author Hypnocode
  */
 public class ThrowRandom extends ThrowCalculator 
 {
@@ -27,4 +28,4 @@ public class ThrowRandom extends ThrowCalculator
         {return -1;}
         return rand.nextInt(max-min+1) + min;
     }
-   }
+}

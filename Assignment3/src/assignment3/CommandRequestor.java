@@ -1,17 +1,17 @@
 package assignment3;
 
 /**
- *
- * @author D4rkFr4g
- */
+*
+* @author Hypnocode
+*/
 public abstract class CommandRequestor
 {
     public static CommandRequestor makeRequestor(RequestType type)
     {
         switch (type)
         {
-            case TEXTREQUEST: 
-                return new CommandTextRequest();         
+            case TEXTREQUEST:
+                return new CommandTextRequest();
         }
         return null;
     }

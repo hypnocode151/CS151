@@ -1,10 +1,10 @@
 package assignment3;
 
 /**
- *
- * @author D4rkFr4g
- */
-public enum Throw 
+*
+* @author Hypnocode
+*/
+public enum Throw
 {
-    ROCK,PAPER,SCISSORS
+    ROCK,PAPER,SCISSORS, NULL
 }

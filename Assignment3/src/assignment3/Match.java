@@ -1,16 +1,16 @@
 package assignment3;
 /**
- *
- * @author ttran
- */
-public class Match 
+*
+* @author Hypnocode
+*/
+public class Match
 {
     private Player human = new Human();
     private Player computer = new Computer();
     private int round;
     RequestType type = RequestType.TEXTREQUEST;
     
-    public Match(int round) 
+    public Match(int round)
     {
         this.round = round;
     }

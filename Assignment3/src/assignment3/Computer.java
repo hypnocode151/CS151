@@ -1,7 +1,8 @@
+
 package assignment3;
 /**
  *
- * @author Tin
+ * @author Hypnocode
  */
 public class Computer extends Player
 {
@@ -19,3 +20,4 @@ public class Computer extends Player
         myThrow = calc.generateThrow();
     }
 }
+

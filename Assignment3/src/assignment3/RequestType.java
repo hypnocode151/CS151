@@ -1,10 +1,11 @@
 package assignment3;
 
 /**
- *
- * @author D4rkFr4g
- */
-public enum RequestType 
+*
+* @author Hypnocode
+*/
+public enum RequestType
 {
     TEXTREQUEST
 }
+
