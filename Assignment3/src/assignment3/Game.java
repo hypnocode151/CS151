@@ -32,7 +32,7 @@ public class Game
     {
         MainMenu();
         
-        if (args[1].contains("0123456789"))
+        if (args[0].contains("0123456789"))
         {
             rounds = Integer.parseInt(args[1]);
         }
@@ -40,6 +40,7 @@ public class Game
         {
             System.out.println("Argument is not an integer.");
             System.out.println("One round selected.");
+            rounds = 1;
         }
         
         aMatch = new Match(rounds);
