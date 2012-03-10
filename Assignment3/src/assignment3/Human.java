@@ -5,7 +5,7 @@
 package assignment3;
 /**
 *
-* @author D4rkFr4g
+* @author Tin
 */
 public class Human extends Player
 {

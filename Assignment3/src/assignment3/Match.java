@@ -1,7 +1,7 @@
 package assignment3;
 /**
 *
-* @author ttran
+* @author Tin 
 */
 public class Match
 {

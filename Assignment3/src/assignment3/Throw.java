@@ -2,7 +2,7 @@ package assignment3;
 
 /**
 *
-* @author D4rkFr4g
+* @author Zane Melcho
 */
 public enum Throw
 {

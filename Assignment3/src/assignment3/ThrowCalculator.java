@@ -7,7 +7,7 @@ package assignment3;
 
 /**
  *
- * @author D4rkFr4g
+ * @author Zane Melcho
  */
 public abstract class ThrowCalculator 
 {
@@ -24,4 +24,4 @@ public abstract class ThrowCalculator
     
     public abstract Throw generateThrow();        
 }
-
+  
