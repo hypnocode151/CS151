@@ -34,7 +34,7 @@ public class Game
         
         if (args[1].contains("0123456789"))
         {
-            rounds = 3;//Integer.parseInt(args[1]);
+            rounds = Integer.parseInt(args[1]);
         }
         else
         {
