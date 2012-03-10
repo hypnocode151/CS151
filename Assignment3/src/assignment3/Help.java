@@ -2,7 +2,7 @@ package assignment3;
 
 /**
 *
-* @author Bao
+* @author Hypnocode
 */
 public class Help
 {

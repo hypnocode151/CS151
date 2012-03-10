@@ -3,7 +3,7 @@ package assignment3;
 import java.util.Random;
 /**
  *
- * @author Tin
+ * @author Hypnocode
  */
 public class ThrowRandom extends ThrowCalculator 
 {

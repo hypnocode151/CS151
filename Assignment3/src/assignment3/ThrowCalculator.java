@@ -7,7 +7,7 @@ package assignment3;
 
 /**
  *
- * @author Zane Melcho
+ * @author Hypnocode
  */
 public abstract class ThrowCalculator 
 {

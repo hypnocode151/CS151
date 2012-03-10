@@ -5,7 +5,7 @@
 package assignment3;
 /**
 *
-* @author Tin
+* @author Hypnocode
 */
 public class Human extends Player
 {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
 *
-* @author Zane melcho
+* @author Hypnocode
 * 3/8/2012
 */
 public class Game

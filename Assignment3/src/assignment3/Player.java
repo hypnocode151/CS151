@@ -3,7 +3,7 @@ package assignment3;
 import java.util.*;
 /**
 *
-* @author Tin 
+* @author THypnocode
 */
 public class Player
 {

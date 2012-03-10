@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
 *
-* @author Zane Melcho, Bao
+* @author Hypnocode
 */
 public class CommandTextRequest extends CommandRequestor
 {

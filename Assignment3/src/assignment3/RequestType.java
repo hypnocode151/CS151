@@ -2,7 +2,7 @@ package assignment3;
 
 /**
 *
-* @author Zan Melcho
+* @author Hypnocode
 */
 public enum RequestType
 {
