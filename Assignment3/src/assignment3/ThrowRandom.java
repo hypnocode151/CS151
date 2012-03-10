@@ -1,10 +1,11 @@
+
 package assignment3;
 import java.util.Random;
 /**
-*
-* @author Tin
-*/
-public class ThrowRandom extends ThrowCalculator
+ *
+ * @author Tin
+ */
+public class ThrowRandom extends ThrowCalculator 
 {
     private Random rand = new Random();
    
@@ -27,4 +28,4 @@ public class ThrowRandom extends ThrowCalculator
         {return -1;}
         return rand.nextInt(max-min+1) + min;
     }
-   }
+}

@@ -1,8 +1,9 @@
+
 package assignment3;
 /**
-*
-* @author Tin
-*/
+ *
+ * @author Tin
+ */
 public class Computer extends Player
 {
     CalculatorType type = CalculatorType.RANDOM;
@@ -19,3 +20,4 @@ public class Computer extends Player
         myThrow = calc.generateThrow();
     }
 }
+
