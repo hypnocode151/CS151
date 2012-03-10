@@ -8,6 +8,7 @@ package assignment3;
  *
  * @author D4rkFr4g
  */
-public interface ThrowRequestor {
-    
+public interface ThrowRequestor 
+{
+    void Throw generateThrow()
 }

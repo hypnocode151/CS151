@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package assignment3;
 
 import java.util.*;
@@ -12,34 +8,63 @@ import java.util.*;
  */
 public class Player 
 {
+    
     public Player()
             {
-                
+                score = 0;
             }
-    public int compareThrows()
+    public enum Throw{ROCK, SCISSOR, PAPER} 
+    
+    Player.Throw myThrow;
+   
+    
+    public int compareThrows(Player player, Player player2)
     {
-        ///get throw method?
-        return 1;
+        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.ROCK)
+        return 0;
+       
+        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.PAPER)
+            return 1;
+        
+        if(player.myThrow == Player.Throw.ROCK && player2.myThrow == Player.Throw.SCISSOR)
+            return 2;
+        
+        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.PAPER)
+            return 1;
+        
+        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.ROCK)
+            return 2;
+         
+        if(player.myThrow == Player.Throw.SCISSOR && player2.myThrow == Player.Throw.SCISSOR)
+            return 0;
+          
+        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.PAPER)
+            return 0;
+           
+        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.ROCK)
+            return 1;
+        
+        if(player.myThrow == Player.Throw.PAPER && player2.myThrow == Player.Throw.SCISSOR)
+            return 2; 
+              
+        return 0;
+    }
+    
+    public int getScore()
+    {
+        return score;
     }
     
     public void incrementScore()
     {
         score++;
     }
-    public int getScore()
-    {
-        return score;
-    }
-    
-   
     
     public void makeThrow()
     {
-        Random randthrow = new Random();
-        int guess = randthrow.nextInt(3);
+        
     }
             
     private int score;
     
 }
-

@@ -15,8 +15,6 @@ public class Match
     private Player Computer = new Player();
     private int round;
     public Match(int round) {
-        this.player = player;
-        this.Computer = Computer;
         this.round = round;
     }
     
