@@ -40,23 +40,16 @@ public class ThrowTextRequest
             }
         }
             
-            // Input is an option command or unrecognized.
-            else {
-                if (input.equals("help")) 
-                    Help.displayHelp();
-                else if (input.equals("score")) {
-                    displayScore();
-                }
-                else if (input.equals("count")) {
-                    displayCount();
-                }
-                else if (input.equals("quit")) {
-                    quit();
-                }
-                else {
-                    System.out.printf("Unrecognized command. Type 'help' for info.\n");
-                }
+        // Input is an option command or unrecognized.
+        else 
+        {
+            if (input.equals("help")) 
+                Help.displayHelp();
+            else 
+            {
+                System.out.printf("Unrecognized command. Type 'help' for info.\n");
             }
+        }
         
         
         return null;
