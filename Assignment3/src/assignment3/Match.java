@@ -46,6 +46,7 @@ public class Match
         }
         
         computer.makeThrow();
+        human.compareThrows((Player) computer);
         round--;
     }
     
