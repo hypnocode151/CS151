@@ -25,13 +25,13 @@ public class Player
         }
         else if((myThrow == Throw.ROCK) && (player.myThrow == Throw.SCISSORS))
         {
-            incrementScore();
+            this.incrementScore();
             System.out.println("Player = Rock\tComputer = Scissors");
             System.out.println("Player wins Round!");
         }
         else if((myThrow == Throw.SCISSORS) && (player.myThrow == Throw.PAPER))
         {
-            incrementScore();
+            this.incrementScore();
             System.out.println("Player = Scissors\tComputer = Paper");
             System.out.println("Computer wins Round!");
         }
@@ -43,7 +43,7 @@ public class Player
         }
         else if((myThrow == Throw.PAPER && player.myThrow == Throw.ROCK))
         {
-            incrementScore();
+            this.incrementScore();
             System.out.println("Player = Paper\tComputer = Rock");
             System.out.println("Player wins Round!");
         }
