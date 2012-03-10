@@ -13,7 +13,6 @@ public class Computer extends Player
         super();
     }
     
-    @Override
     public void makeThrow()
     {
         ThrowCalculator calc = ThrowCalculator.makeCalculator(type);

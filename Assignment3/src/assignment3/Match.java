@@ -6,7 +6,7 @@ package assignment3;
 public class Match
 {
     private Human human = new Human();
-    private Player computer = new Computer();
+    private Computer computer = new Computer();
     private int round;
     RequestType type = RequestType.TEXTREQUEST;
     
