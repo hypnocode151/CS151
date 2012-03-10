@@ -5,7 +5,7 @@ package assignment3;
 */
 public class Match
 {
-    private Player human = new Human();
+    private Human human = new Human();
     private Player computer = new Computer();
     private int round;
     RequestType type = RequestType.TEXTREQUEST;
@@ -20,7 +20,7 @@ public class Match
     {
         CommandRequestor cr = CommandRequestor.makeRequestor(type);
         
-        switch (cr.generateCommand())
+        switch (cr.requestCommand())
         {
             case THROWROCK:
                 human.setThrow(Throw.ROCK);
