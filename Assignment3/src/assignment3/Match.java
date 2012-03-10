@@ -15,6 +15,14 @@ public class Match
         this.round = round;
     }
     
+    private void displayScores()
+    {
+        System.out.printf(""
+                    + "%10s: %d\n"
+                    + "%10s: %d\n"
+                    , "You", human.getScore()
+                    , "Computer", computer.getScore());
+    }
     
     public void makeThrows()
     {
@@ -34,20 +42,19 @@ public class Match
             case HELP:
                 Help.displayHelp();
             case SCORE:
-                System.out.printf(""
-                    + "%10s: %d\n"
-                    + "%10s: %d\n"
-                    , "You", human.getScore()
-                    , "Computer", computer.getScore());
+                displayScores();
                 break;
             case QUIT:
                 round = 0;
                 break;
         }
         
-        computer.makeThrow();
-        human.compareThrows((Player) computer);
-        round--;
+        if (round > 0)
+        {
+            computer.makeThrow();
+            human.compareThrows((Player) computer);
+            round--;
+        }
     }
     
     public void declareWinner()

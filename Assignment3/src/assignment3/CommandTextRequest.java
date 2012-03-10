@@ -43,6 +43,8 @@ public class CommandTextRequest extends CommandRequestor
                     return Command.HELP;
                 else if (input.equals("score"))
                     return Command.SCORE;
+                else if (input.equals("quit"))
+                    return Command.QUIT;
                 else 
                 {
                     System.out.printf("Unrecognized command. Type 'help' for info.\n");
