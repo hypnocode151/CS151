@@ -66,8 +66,8 @@ public class Match
     
     public void declareWinner()
     {
-        System.out.println("Player 1 score = " + human.getScore());
-        System.out.println("Player 2 score = " + computer.getScore());
+        System.out.println("Player score = " + human.getScore());
+        System.out.println("Computer score = " + computer.getScore());
         if(human.getScore() < computer.getScore())
         {
             System.out.println("The winner is Computer");
