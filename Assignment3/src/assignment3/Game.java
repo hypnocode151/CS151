@@ -32,17 +32,16 @@ public class Game
     {
         MainMenu();
         
-        //if (args[1].contains("0123456789"))
+        if (args[1].contains("0123456789"))
         {
             rounds = 3;//Integer.parseInt(args[1]);
         }
-        /*
         else
         {
             System.out.println("Argument is not an integer.");
             System.out.println("One round selected.");
         }
-        */
+        
         aMatch = new Match(rounds);
         
         while(!aMatch.isMatchOver())
