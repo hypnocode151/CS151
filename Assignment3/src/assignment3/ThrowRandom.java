@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment3;
 import java.util.Random;
 /**
  *
- * @author D4rkFr4g
+ * @author Tin
  */
-public class ThrowRandom implements ThrowCalculator {
+public class ThrowRandom extends ThrowCalculator 
+{
     private Random rand = new Random();
    
     public Throw generateThrow()

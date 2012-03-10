@@ -8,9 +8,18 @@ package assignment3;
  *
  * @author D4rkFr4g
  */
-public interface ThrowCalculator {
+public abstract class ThrowCalculator 
+{
+
+    public static ThrowCalculator makeCalculator(CalculatorType type)
+    {
+        switch (type)
+        {
+            case RANDOM: 
+                return new ThrowRandom();         
+        }
+        return null;
+    }
     
-     Throw generateThrow();
-             
-        
+    public abstract Throw generateThrow();        
 }
