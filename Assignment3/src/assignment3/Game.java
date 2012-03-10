@@ -13,11 +13,6 @@ public class Game
     private static Match aMatch;
     private static int rounds = 0;
     
-    public void DisplayHelp()
-    {
-        //System.out.println("What do you need help with?");
-    }
-    
     public static void MainMenu()
     {
         Scanner scan = new Scanner(System.in);
@@ -28,8 +23,8 @@ public class Game
         System.out.println("*             Hypnocode            *");
         System.out.println("************************************");
         System.out.println("\n\n\n\n\n");
-        System.out.println("Please enter the number of throws");
-        rounds = scan.nextInt();
+        //System.out.println("Please enter the number of throws");
+        //rounds = scan.nextInt();
         
         System.out.println("\033");
     }
@@ -37,7 +32,17 @@ public class Game
     {
         MainMenu();
         
-        aMatch = new Match(rounds);
+        if (args[1].contains("0123456789"))
+        {
+            rounds = Integer.parseInt(args[1]);
+        }
+        else
+        {
+            System.out.println("Argument is not an integer.");
+            System.out.println("One round selected.");
+        }
+        
+        aMatch = new Match();
         
         while(!aMatch.isMatchOver())
         {

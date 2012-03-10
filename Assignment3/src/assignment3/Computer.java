@@ -3,11 +3,11 @@
  * and open the template in the editor.
  */
 package assignment3;
-
 /**
  *
  * @author D4rkFr4g
  */
-public class Computer {
+public class Computer extends Player
+{
     
 }

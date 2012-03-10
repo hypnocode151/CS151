@@ -10,5 +10,5 @@ package assignment3;
  */
 public interface ThrowRequestor 
 {
-    void Throw generateThrow()
+    Throw generateThrow();
 }
