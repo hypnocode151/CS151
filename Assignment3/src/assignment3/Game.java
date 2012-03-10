@@ -6,6 +6,7 @@ import java.util.Scanner;
 *
 * @author Hypnocode
 * 3/8/2012
+* this is a test
 */
 public class Game
 {
