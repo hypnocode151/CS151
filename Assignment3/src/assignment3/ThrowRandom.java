@@ -15,7 +15,7 @@ public class ThrowRandom extends ThrowCalculator
         {
             case 1: return Throw.ROCK;
             case 2: return Throw.PAPER;
-            case 3: return Throw.SCISSORS;
+            case 3: return Throw.SCISSOR;
            
         }
         return Throw.NULL;

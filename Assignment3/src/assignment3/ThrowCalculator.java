@@ -24,4 +24,4 @@ public abstract class ThrowCalculator
     
     public abstract Throw generateThrow();        
 }
->>>>>>> f33153a74d2ab0ddd91446133afd072bbeb5a73a
+
