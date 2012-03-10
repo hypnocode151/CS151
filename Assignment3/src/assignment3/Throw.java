@@ -6,5 +6,5 @@ package assignment3;
 */
 public enum Throw
 {
-    ROCK,PAPER,SCISSORS
+    ROCK,PAPER,SCISSOR
 }
