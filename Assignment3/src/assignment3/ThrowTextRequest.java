@@ -8,6 +8,10 @@ package assignment3;
  *
  * @author D4rkFr4g
  */
-public class ThrowTextRequest {
-    
+public class ThrowTextRequest 
+{
+    Throw generateThrow()
+    {
+        return null;
+    }
 }
