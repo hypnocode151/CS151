@@ -42,7 +42,7 @@ public class Game
             System.out.println("One round selected.");
         }
         
-        aMatch = new Match();
+        aMatch = new Match(rounds);
         
         while(!aMatch.isMatchOver())
         {

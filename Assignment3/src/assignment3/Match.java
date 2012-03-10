@@ -49,7 +49,7 @@ public class Match
         round--;
     }
     
-    public void DeclareWinner()
+    public void declareWinner()
     {
         System.out.println("Player 1 score = " + human.getScore());
         System.out.println("Player 2 score = " + computer.getScore());
