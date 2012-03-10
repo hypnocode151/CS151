@@ -24,16 +24,16 @@ public class Player
         if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.PAPER)
             return 1;
         
-        if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.SCISSOR)
+        if(player.myThrow == Throw.ROCK && player2.myThrow == Throw.SCISSORS)
             return 2;
         
-        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.PAPER)
+        if(player.myThrow == Throw.SCISSORS && player2.myThrow == Throw.PAPER)
             return 1;
         
-        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.ROCK)
+        if(player.myThrow == Throw.SCISSORS && player2.myThrow == Throw.ROCK)
             return 2;
          
-        if(player.myThrow == Throw.SCISSOR && player2.myThrow == Throw.SCISSOR)
+        if(player.myThrow == Throw.SCISSORS && player2.myThrow == Throw.SCISSORS)
             return 0;
         
         if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.PAPER)
@@ -42,7 +42,7 @@ public class Player
         if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.ROCK)
             return 1;
         
-        if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.SCISSOR)
+        if(player.myThrow == Throw.PAPER && player2.myThrow == Throw.SCISSORS)
             return 2;
               
         return 0;

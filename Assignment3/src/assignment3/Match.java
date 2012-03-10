@@ -29,7 +29,7 @@ public class Match
                 human.setThrow(Throw.PAPER);
                 break;
             case THROWSCISSORS:
-                human.setThrow(Throw.SCISSOR);
+                human.setThrow(Throw.SCISSORS);
                 break;
             case HELP:
                 Help.displayHelp();
