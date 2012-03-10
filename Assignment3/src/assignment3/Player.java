@@ -6,7 +6,7 @@ import java.util.*;
  *
  * @author ttran
  */
-public abstract class Player 
+public class Player 
 {
     
     public Player()

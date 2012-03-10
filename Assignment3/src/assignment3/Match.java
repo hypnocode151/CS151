@@ -15,7 +15,7 @@ public class Match
     private Player Computer = new Player();
     private int round;
     public Match(int round) {
-        this.round = round;
+         this.round = round;
     }
     
     
@@ -44,11 +44,12 @@ public class Match
         }
     }
     
-    public void isMatchOver()
+    public boolean isMatchOver()
     {
         if(round == 0)
         {
             System.out.println("The Match is over");
         }
+        return true;
     }
 }

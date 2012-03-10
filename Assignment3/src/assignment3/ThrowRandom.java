@@ -10,4 +10,9 @@ package assignment3;
  */
 public class ThrowRandom {
     
-}
+    public ThrowRandom()
+    {
+        
+    }
+    
+   }
