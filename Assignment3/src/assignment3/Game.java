@@ -32,11 +32,11 @@ public class Game
     {
         MainMenu();
         System.out.println(args[0]);
-        if (args[0].contains("0123456789"))
+        try
         {
             rounds = Integer.parseInt(args[0]);
         }
-        else
+        catch (NumberFormatException expr)
         {
             System.out.println("Argument is not an integer.");
             System.out.println("One round selected.");
