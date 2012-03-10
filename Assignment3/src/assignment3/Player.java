@@ -9,13 +9,12 @@ import java.util.*;
 public abstract class Player 
 {
     
+    Throw myThrow;
+    
     public Player()
             {
                 score = 0;
             }
-    public enum Throw{ROCK, SCISSOR, PAPER} 
-    
-    Player.Throw myThrow;
    
     
     public int compareThrows(Player player, Player player2)
