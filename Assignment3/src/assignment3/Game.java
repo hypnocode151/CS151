@@ -13,6 +13,7 @@ public class Game
     
     private static Match aMatch;
     private static int rounds = 0;
+    private static int calcType;
     
     public static void MainMenu()
     {
@@ -29,13 +30,15 @@ public class Game
         
         System.out.println("\033");
     }
+    
     public static void main(String[] args)
     {
         MainMenu();
-        System.out.println(args[0]);
+
         try
         {
             rounds = Integer.parseInt(args[0]);
+            //System.out.println(rounds + " = rounds");
         }
         catch (NumberFormatException expr)
         {
@@ -44,7 +47,20 @@ public class Game
             rounds = 1;
         }
         
-        aMatch = new Match(rounds);
+        try
+        {
+            calcType = Integer.parseInt(args[1]);
+            //System.out.println(calcType + " = calcType");
+        }
+        catch (NumberFormatException expr)
+        {
+            System.out.println("Argument is not an integer.");
+            System.out.println("Random Calculator selected");
+            calcType = 0;
+        }
+        
+        
+        aMatch = new Match(rounds, calcType);
         
         while(!aMatch.isMatchOver())
         {

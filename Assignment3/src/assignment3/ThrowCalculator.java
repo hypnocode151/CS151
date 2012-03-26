@@ -11,7 +11,6 @@ package assignment3;
  */
 public abstract class ThrowCalculator 
 {
-
     public static ThrowCalculator makeCalculator(CalculatorType type)
     {
         switch (type)

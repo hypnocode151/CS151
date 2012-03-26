@@ -6,5 +6,10 @@ package assignment3;
  */
 public enum CalculatorType 
 {
-    RANDOM
+    RANDOM;
+
+    public static CalculatorType lookUpType(int i)
+    {
+        return CalculatorType.values()[i];
+    }
 }

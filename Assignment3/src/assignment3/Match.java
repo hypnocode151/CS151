@@ -5,15 +5,18 @@ package assignment3;
 */
 public class Match
 {
-    private Human human = new Human();
-    private Computer computer = new Computer();
+    CalculatorType calcType;
+    private Player human = new Human("Player");
+    private Player computer;
     private int round;
 
     RequestType type = RequestType.TEXTREQUEST;
     
-    public Match(int round)
+    public Match(int round, int calcType)
     {
         this.round = round;
+        this.calcType = CalculatorType.lookUpType(calcType);
+        computer = new Computer("Computer", this.calcType);
     }
     
     private void displayScores()
@@ -21,8 +24,8 @@ public class Match
         System.out.printf(""
                     + "%10s: %d\n"
                     + "%10s: %d\n"
-                    , "You", human.getScore()
-                    , "Computer", computer.getScore());
+                    , human.getName(), human.getScore()
+                    , computer.getName(), computer.getScore());
     }
     
     public void makeThrows()
@@ -34,15 +37,15 @@ public class Match
         switch (cr.requestCommand())
         {
             case THROWROCK:
-                human.setThrow(Throw.ROCK);
+                human.makeThrow(Throw.ROCK);
                 madeThrow = true;
                 break;
             case THROWPAPER:
-                human.setThrow(Throw.PAPER);
+                human.makeThrow(Throw.PAPER);
                 madeThrow = true;
                 break;
             case THROWSCISSORS:
-                human.setThrow(Throw.SCISSORS);
+                human.makeThrow(Throw.SCISSORS);
                 madeThrow = true;
                 break;
             case HELP:
@@ -58,23 +61,26 @@ public class Match
         
         if (round > 0 && madeThrow)
         {
-            computer.makeThrow();
-            human.compareThrows((Player) computer);
+            computer.makeThrow(null);
+                   
+            human.compareThrows(computer);
             round--;
         }
     }
     
     public void declareWinner()
     {
-        System.out.println("Player score = " + human.getScore());
-        System.out.println("Computer score = " + computer.getScore());
+        System.out.println(human.getName() + " score = " + human.getScore());
+        System.out.println(computer.getName() + " score = " 
+                + computer.getScore());
+        
         if(human.getScore() < computer.getScore())
         {
-            System.out.println("The winner is Computer");
+            System.out.println("The winner is " + computer.getName());
         }
         else if (human.getScore() > computer.getScore())
         {
-            System.out.println("The winner is Player");
+            System.out.println("The winner is " + human.getName());
         }
         else
         {

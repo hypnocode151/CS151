@@ -6,17 +6,27 @@ package assignment3;
  */
 public class Computer extends Player
 {
-    CalculatorType type = CalculatorType.RANDOM;
-    
-    public Computer ()
+    CalculatorType type;
+        
+    public Computer(String name, CalculatorType type)
     {
-        super();
+        super(name);
+        this.type = type;
     }
     
-    public void makeThrow()
+    @Override
+    public void makeThrow(Throw aThrow)
     {
         ThrowCalculator calc = ThrowCalculator.makeCalculator(type);
         myThrow = calc.generateThrow();
     }
+/*    
+    @Override
+    public void setThrow(Throw aThrow)
+    {
+        //Empty method to prevent computer setting of myThrow.
+    }
+    
+*/
 }
 
