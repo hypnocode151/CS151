@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  *
  * @author Hypnocode
- * The CommandTextRequest read the input from user then translate it to the command of the game
+ * The CommandTextRequest reads the input from user then translates it to the command of the game
  *
  */
 public class CommandTextRequest extends CommandRequestor
@@ -14,7 +14,7 @@ public class CommandTextRequest extends CommandRequestor
     String input = "";
     
     /*
-     * read input from Player then make a request based on the input
+     * reads input from Player then makes a request based on the input
      * @return a Command
      */
     @Override

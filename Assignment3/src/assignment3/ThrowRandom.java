@@ -4,6 +4,7 @@ import java.util.Random;
 /**
  *
  * @author Hypnocode
+ * 
  */
 public class ThrowRandom extends ThrowCalculator 
 {
