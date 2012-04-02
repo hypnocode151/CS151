@@ -1,11 +1,15 @@
 package assignment3;
 
 /**
-*
+* Help is a class that is for end-user information on how to interact 
+* with the application.
 * @author Hypnocode
 */
 public class Help
 {
+    /*
+     * Prints to a command line information on how to input choices
+     */
     public static void displayHelp()
     {
         System.out.printf("\nCmds:\n"
