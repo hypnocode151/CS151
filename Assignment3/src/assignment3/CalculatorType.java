@@ -8,7 +8,7 @@ package assignment3;
  */
 public enum CalculatorType 
 {
-    RANDOM;
+    RANDOM,SMART;
 
     public static CalculatorType lookUpType(int i)
     {
