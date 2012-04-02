@@ -2,7 +2,9 @@ package assignment3;
 
 /**
  *
- * @author Zane Melcho
+ * @author Hypnocode
+ * The CalculatorType loop up type for which Algorithm the computer would use
+ * @param int the value to pass into the method
  */
 public enum CalculatorType 
 {

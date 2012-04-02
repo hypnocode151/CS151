@@ -4,13 +4,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author Zane Melcho, Bao
+ * @author Hypnocode
+ * The CommandTextRequest read the input from user then translate it to the command of the game
+ *
  */
 public class CommandTextRequest extends CommandRequestor
 {
     Scanner sc = new Scanner(System.in);
     String input = "";
     
+    /*
+     * read input from Player then make a request based on the input
+     * @return a Command
+     */
     @Override
     public Command requestCommand()
     {

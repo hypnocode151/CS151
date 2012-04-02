@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
 *
 * @author Hypnocode
-* 3/8/2012
-* this is a test
+* The Game Class creates a match and calls other methods for a match to run
+* 
 */
 public class Game
 {
@@ -14,7 +14,9 @@ public class Game
     private static Match aMatch;
     private static int rounds = 0;
     private static int calcType;
-    
+    /*
+     * make a main menu with all the options
+     */
     public static void MainMenu()
     {
         Scanner scan = new Scanner(System.in);
@@ -30,7 +32,9 @@ public class Game
         
         System.out.println("\033");
     }
-    
+    /*
+     * run the game
+     */
     public static void main(String[] args)
     {
         MainMenu();
