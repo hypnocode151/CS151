@@ -6,12 +6,12 @@ package assignment3;
 */
 public class Match
 {
-    CalculatorType calcType;
+    private CalculatorType calcType;
     private Player human = new Human("Player");
     private Player computer;
     private int round;
 
-    RequestType type = RequestType.TEXTREQUEST;
+    private RequestType type = RequestType.TEXTREQUEST;
     /*
      * Creates a Match
      * @param int the number of the rounds. 
