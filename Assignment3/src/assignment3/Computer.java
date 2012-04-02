@@ -29,13 +29,5 @@ public class Computer extends Player
         ThrowCalculator calc = ThrowCalculator.makeCalculator(type);
         myThrow = calc.generateThrow();
     }
-/*    
-    @Override
-    public void setThrow(Throw aThrow)
-    {
-        //Empty method to prevent computer setting of myThrow.
-    }
-    
-*/
 }
 
