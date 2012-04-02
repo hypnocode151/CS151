@@ -12,7 +12,10 @@ import static org.junit.Assert.*;
  */
 public class PlayerTest {
     private int score;
-    protected Throw myThrow;
+    protected Throw ROCK;
+    protected Throw PAPER;
+    protected Throw SCISSORS;
+    protected Throw NULL;
     private String name;
     public PlayerTest() {
     }
@@ -26,6 +29,16 @@ public class PlayerTest {
         System.out.println("Test compareThrows");
         Player player = new Player("test1");
         Player player2 = new Player("test2");
+        player.makeThrow(ROCK);
+        player2.makeThrow(PAPER);
+        player2.compareThrows(player);
+        
+        player.makeThrow(ROCK);
+        player2.makeThrow(SCISSORS);
+        player2.compareThrows(player);
+        
+        player.makeThrow(PAPER);
+        player2.makeThrow(SCISSORS);
         player2.compareThrows(player);
         
     }
@@ -37,7 +50,10 @@ public class PlayerTest {
     public void testGetScore() {
         System.out.println("Test getScore");
         Player player1 =  new Player("test1");
-        int expResult = score;
+        player1.incrementScore();
+        player1.incrementScore();
+        player1.incrementScore();
+        int expResult = 3;
         int result = player1.getScore();
         assertEquals(expResult, result);
         
@@ -50,7 +66,11 @@ public class PlayerTest {
     public void testIncrementScore() {
         System.out.println("Test incrementScore");
         Player player = new Player("test1");
+        int currentscore = player.getScore();
         player.incrementScore();
+        player.incrementScore();
+        player.incrementScore();
+        assertEquals(player.getScore(),currentscore+3);
         
     }
 
@@ -60,7 +80,7 @@ public class PlayerTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Player player = new Player("name");
+        Player player = new Player(name);
         String expResult = "name";
         String result = player.getName();
         assertEquals(expResult, result);
@@ -74,10 +94,20 @@ public class PlayerTest {
     public void testGetThrow() {
         System.out.println("Test getThrow");
         Player player = new Player("test");
-        Throw expResult = myThrow;
+        Throw expResult = ROCK;
+        player.makeThrow(ROCK);
         Throw result = player.getThrow();
         assertEquals(expResult, result);
         
+        Throw expResult2 = PAPER;
+        player.makeThrow(PAPER);
+        Throw result2 = player.getThrow();
+        assertEquals(expResult2, result2);
+        
+        Throw expResult3 = PAPER;
+        player.makeThrow(PAPER);
+        Throw result3 = player.getThrow();
+        assertEquals(expResult3, result3);
     }
 
     /**
@@ -86,9 +116,10 @@ public class PlayerTest {
     @Test
     public void testMakeThrow() {
         System.out.println("Test makeThrow");
-        Throw aThrow = myThrow;
         Player player = new Player("test1");
-        player.makeThrow(aThrow);
+        player.makeThrow(ROCK);
+        player.makeThrow(PAPER);
+        player.makeThrow(SCISSORS);
    
     }
 }

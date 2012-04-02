@@ -1,10 +1,10 @@
 package assignment3;
 
 /**
- *
- * @author Hypnocode
- * The CalculatorType looks up type for which algorithm the computer would use.
+ *The CalculatorType looks up type for which algorithm the computer would use.
  * @param int the value to pass into the method.
+ * @author Hypnocode
+ * 
  */
 public enum CalculatorType 
 {

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment3;
 
 import org.junit.Test;
@@ -13,7 +9,12 @@ import static org.junit.Assert.*;
  * @author ttran
  */
 public class MatchTest {
-    
+    private int score;
+    protected Throw ROCK;
+    protected Throw PAPER;
+    protected Throw SCISSORS;
+    protected Throw NULL;
+    private String name;
     public MatchTest() {
     }
 
@@ -26,6 +27,9 @@ public class MatchTest {
         System.out.println("Test makeThrows");
         Match match = new Match(1,1);
         match.makeThrows();
+        Match match2 = new Match(2,1);
+        match2.makeThrows();
+        match2.makeThrows();
         
     }
 

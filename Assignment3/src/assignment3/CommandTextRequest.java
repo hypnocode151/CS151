@@ -3,11 +3,9 @@ package assignment3;
 import java.util.Scanner;
 
 /**
- *
- * @author Hypnocode
  * The CommandTextRequest reads the inputs from user then translates it to the
  * commands of the game.
- *
+ * @author Hypnocode
  */
 public class CommandTextRequest extends CommandRequestor
 {

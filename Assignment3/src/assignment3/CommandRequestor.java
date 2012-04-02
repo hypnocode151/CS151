@@ -1,9 +1,8 @@
 package assignment3;
 
 /**
-*
+** The CommendRequestor is a class that handles all the command requests.
 * @author Hypnocode
-* The CommendRequestor is a class that handles all the command requests.
 */
 public abstract class CommandRequestor
 {
