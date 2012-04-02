@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
 *
 * @author Hypnocode
-* The Game Class creates a match and calls other methods for a match to run
+* The Game Class creates a match and calls other methods for a match to run.
 * 
 */
 public class Game
@@ -33,7 +33,7 @@ public class Game
         System.out.println("\033");
     }
     /*
-     * run the game
+     * Run the game.
      */
     public static void main(String[] args)
     {

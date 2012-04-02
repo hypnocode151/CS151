@@ -1,13 +1,10 @@
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment3;
 
 /**
  *
  * @author Hypnocode
+ * The ThrowCalculator Class constructs a throw calculator based 
+ * on the calculator type.
  */
 public abstract class ThrowCalculator 
 {
@@ -20,7 +17,9 @@ public abstract class ThrowCalculator
         }
         return null;
     }
-    
+    /*
+     * 
+     */
     public abstract Throw generateThrow();        
 }
   

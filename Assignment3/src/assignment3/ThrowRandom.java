@@ -5,6 +5,7 @@ import java.util.Random;
  * ThrowRandom is an extension of the ThrowCalculator class that picks a random
  * throw choice for the player.
  * @author Hypnocode
+ * 
  */
 public class ThrowRandom extends ThrowCalculator 
 {

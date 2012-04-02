@@ -2,6 +2,7 @@ package assignment3;
 /**
 *
 * @author Hypnocode
+* the Match Class manages all the functions of a match.
 */
 public class Match
 {
@@ -11,14 +12,20 @@ public class Match
     private int round;
 
     RequestType type = RequestType.TEXTREQUEST;
-    
+    /*
+     * Creates a Match
+     * @param int the number of the rounds. 
+     * @param int the type of the calculator.
+     */
     public Match(int round, int calcType)
     {
         this.round = round;
         this.calcType = CalculatorType.lookUpType(calcType);
         computer = new Computer("Computer", this.calcType);
     }
-    
+   /*
+    * Displas the current score
+    */
     private void displayScores()
     {
         System.out.printf(""
@@ -27,7 +34,9 @@ public class Match
                     , human.getName(), human.getScore()
                     , computer.getName(), computer.getScore());
     }
-    
+    /*
+     * Make throws both human and computer.
+     */
     public void makeThrows()
     {
         boolean madeThrow = false;
@@ -67,7 +76,9 @@ public class Match
             round--;
         }
     }
-    
+    /*
+     * Declare a winner based the score.
+     */
     public void declareWinner()
     {
         System.out.println(human.getName() + " score = " + human.getScore());
@@ -87,7 +98,10 @@ public class Match
             System.out.println("This game is a tie");
         }
     }
-    
+    /*
+     * Check to see if match is over.
+     * @return true if match is over.
+     */
     public boolean isMatchOver()
     {
         if(round < 1)
