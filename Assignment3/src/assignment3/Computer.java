@@ -19,8 +19,8 @@ public class Computer extends Player
         this.type = type;
     }
     /*
-     * makes a throw
-     * @param Throw the throw of the computer
+     * Makes a throw.
+     * @param Throw the throw of the computer.
      */
     @Override
     public void makeThrow(Throw aThrow)
