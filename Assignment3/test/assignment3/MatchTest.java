@@ -16,7 +16,7 @@ public class MatchTest
      * Test of isMatchOver method, of class Match.
      */
     @Test
-    public void testIsMatchOver() 
+    public void testIsMatchOver()
     {
         System.out.println("Test isMatchOver");
         Match match  = new Match(1,1);
