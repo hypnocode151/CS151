@@ -25,22 +25,21 @@ public class PlayerTest
         System.out.println("Test compareThrows");
         Player player = new Player("test1");
         Player player2 = new Player("test2");
-<<<<<<< HEAD
+
         player.makeThrow(ROCK);
         player2.makeThrow(PAPER);
-        player2.compareThrows(player);
+
         
         player.makeThrow(ROCK);
         player2.makeThrow(SCISSORS);
-        player2.compareThrows(player);
+  
         
         player.makeThrow(PAPER);
         player2.makeThrow(SCISSORS);
-        player2.compareThrows(player);
         
-=======
+        
+
         player2.compareThrows(player);    
->>>>>>> 019066683e50eb602b6ff7b1acf290a89516fbd9
     }
 
     /**
@@ -67,16 +66,14 @@ public class PlayerTest
     {
         System.out.println("Test incrementScore");
         Player player = new Player("test1");
-<<<<<<< HEAD
+
         int currentscore = player.getScore();
         player.incrementScore();
         player.incrementScore();
         player.incrementScore();
         assertEquals(player.getScore(),currentscore+3);
         
-=======
-        player.incrementScore();    
->>>>>>> 019066683e50eb602b6ff7b1acf290a89516fbd9
+
     }
 
     /**
@@ -104,7 +101,7 @@ public class PlayerTest
         player.makeThrow(ROCK);
         Throw result = player.getThrow();
         assertEquals(expResult, result);
-<<<<<<< HEAD
+
         
         Throw expResult2 = PAPER;
         player.makeThrow(PAPER);
@@ -115,8 +112,7 @@ public class PlayerTest
         player.makeThrow(PAPER);
         Throw result3 = player.getThrow();
         assertEquals(expResult3, result3);
-=======
->>>>>>> 019066683e50eb602b6ff7b1acf290a89516fbd9
+
     }
 
     /**
@@ -127,13 +123,11 @@ public class PlayerTest
     {
         System.out.println("Test makeThrow");
         Player player = new Player("test1");
-<<<<<<< HEAD
+
         player.makeThrow(ROCK);
         player.makeThrow(PAPER);
         player.makeThrow(SCISSORS);
    
-=======
-        player.makeThrow(aThrow);
->>>>>>> 019066683e50eb602b6ff7b1acf290a89516fbd9
+
     }
 }
