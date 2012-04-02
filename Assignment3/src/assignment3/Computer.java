@@ -7,7 +7,7 @@ package assignment3;
  */
 public class Computer extends Player
 {
-    CalculatorType type;
+    private CalculatorType type;
       /*
        * Creates a new Computer.
        * @param String the name of the Computer.
@@ -20,11 +20,12 @@ public class Computer extends Player
     }
     /*
      * makes a throw
-     * @param Throw the throw of the computer
+     * @param aThrow Unused and null for computer
      */
     @Override
     public void makeThrow(Throw aThrow)
     {
+        aThrow = null;
         ThrowCalculator calc = ThrowCalculator.makeCalculator(type);
         myThrow = calc.generateThrow();
     }
