@@ -13,13 +13,13 @@ public abstract class ThrowCalculator
         switch (type)
         {
             case RANDOM: 
-                return new ThrowRandom();         
+                return new ThrowRandom();
+            case SMART:
+                return new ThrowSmart();
         }
         return null;
     }
-    /*
-     * 
-     */
+
     public abstract Throw generateThrow();        
 }
   
