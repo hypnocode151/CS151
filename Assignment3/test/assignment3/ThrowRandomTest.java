@@ -8,15 +8,8 @@ import static org.junit.Assert.*;
  * @author ttran
  */
 
-public class ThrowRandomTest {
-    protected Throw ROCK;
-    protected Throw PAPER;
-    protected Throw SCISSORS;
-    protected Throw NULL;
-    public ThrowRandomTest() {
-    }
-
-
+public class ThrowRandomTest 
+{
 
     /**
      * Test of generateThrow method, of class ThrowRandom.
@@ -26,11 +19,14 @@ public class ThrowRandomTest {
     {
         System.out.println("generateThrow");
         ThrowRandom athrow = new ThrowRandom();
-        Throw expResult = ROCK;
-        Throw expResult2 = PAPER;
-        Throw expResult3 = SCISSORS;
+        Throw expResult = Throw.ROCK;
+        Throw expResult2 = Throw.PAPER;
+        Throw expResult3 = Throw.SCISSORS;
         Throw result = athrow.generateThrow();
 
-        assertEquals(expResult, result);    
+        assertEquals(expResult, result);
+        assertEquals(expResult2, result);
+        assertEquals(expResult3, result);
+
     }
 }

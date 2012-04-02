@@ -8,14 +8,7 @@ import static org.junit.Assert.*;
  * @author ttran
  */
 public class PlayerTest 
-{
-    private int score;
-    protected Throw ROCK;
-    protected Throw PAPER;
-    protected Throw SCISSORS;
-    protected Throw NULL;
-    private String name;
-    
+{   
     /**
      * Test of compareThrows method, of class Player.
      */
@@ -26,20 +19,19 @@ public class PlayerTest
         Player player = new Player("test1");
         Player player2 = new Player("test2");
 
-        player.makeThrow(ROCK);
-        player2.makeThrow(PAPER);
 
+        player.makeThrow(Throw.ROCK);
+        player2.makeThrow(Throw.PAPER);
+        player2.compareThrows(player);
         
-        player.makeThrow(ROCK);
-        player2.makeThrow(SCISSORS);
-  
+        player.makeThrow(Throw.ROCK);
+        player2.makeThrow(Throw.SCISSORS);
+        player2.compareThrows(player);
         
-        player.makeThrow(PAPER);
-        player2.makeThrow(SCISSORS);
-        
-        
+        player.makeThrow(Throw.PAPER);
+        player2.makeThrow(Throw.SCISSORS);
+        player2.compareThrows(player);
 
-        player2.compareThrows(player);    
     }
 
     /**
@@ -72,7 +64,6 @@ public class PlayerTest
         player.incrementScore();
         player.incrementScore();
         assertEquals(player.getScore(),currentscore+3);
-        
 
     }
 
@@ -83,7 +74,7 @@ public class PlayerTest
     public void testGetName() 
     {
         System.out.println("getName");
-        Player player = new Player(name);
+        Player player = new Player("name");
         String expResult = "name";
         String result = player.getName();
         assertEquals(expResult, result);
@@ -97,19 +88,19 @@ public class PlayerTest
     {
         System.out.println("Test getThrow");
         Player player = new Player("test");
-        Throw expResult = ROCK;
-        player.makeThrow(ROCK);
+        Throw expResult = Throw.ROCK;
+        player.makeThrow(Throw.ROCK);
         Throw result = player.getThrow();
         assertEquals(expResult, result);
 
         
-        Throw expResult2 = PAPER;
-        player.makeThrow(PAPER);
+        Throw expResult2 = Throw.PAPER;
+        player.makeThrow(Throw.PAPER);
         Throw result2 = player.getThrow();
         assertEquals(expResult2, result2);
         
-        Throw expResult3 = PAPER;
-        player.makeThrow(PAPER);
+        Throw expResult3 = Throw.PAPER;
+        player.makeThrow(Throw.PAPER);
         Throw result3 = player.getThrow();
         assertEquals(expResult3, result3);
 
@@ -124,10 +115,10 @@ public class PlayerTest
         System.out.println("Test makeThrow");
         Player player = new Player("test1");
 
-        player.makeThrow(ROCK);
-        player.makeThrow(PAPER);
-        player.makeThrow(SCISSORS);
-   
+        
+        player.makeThrow(Throw.ROCK);
+        player.makeThrow(Throw.PAPER);
+        player.makeThrow(Throw.SCISSORS);
 
     }
 }
