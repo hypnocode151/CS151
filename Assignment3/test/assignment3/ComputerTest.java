@@ -12,26 +12,21 @@ import static org.junit.Assert.*;
  *
  * @author ttran
  */
-public class ComputerTest {
-protected Throw ROCK;
-protected Throw PAPER;
-protected Throw SCISSORS;
-protected Throw NULL;
-String name;
-CalculatorType type;
-    public ComputerTest() {
-    }
+public class ComputerTest 
+{
+    String name;
+    CalculatorType type;
 
-  
     /**
      * Test of makeThrow method, of class Computer.
      */
     @Test
-    public void testMakeThrow() {
+    public void testMakeThrow() 
+    {
         System.out.println("Test makeThrow");
         Computer comp = new Computer(name, type);
-        comp.makeThrow(ROCK);
-        comp.makeThrow(PAPER);
-        comp.makeThrow(SCISSORS);
+        comp.makeThrow(Throw.ROCK);
+        comp.makeThrow(Throw.PAPER);
+        comp.makeThrow(Throw.SCISSORS);
     }
 }
