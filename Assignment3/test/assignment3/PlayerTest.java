@@ -16,8 +16,8 @@ public class PlayerTest
     public void testCompareThrows() 
     {
         System.out.println("Test compareThrows");
-        Player player = new Player("test1");
-        Player player2 = new Player("test2");
+        Player player = new Human("test1");
+        Player player2 = new Human("test2");
 
 
         player.makeThrow(Throw.ROCK);
@@ -87,7 +87,7 @@ public class PlayerTest
     public void testGetThrow() 
     {
         System.out.println("Test getThrow");
-        Player player = new Player("test");
+        Player player = new Human("test");
         Throw expResult = Throw.ROCK;
         player.makeThrow(Throw.ROCK);
         Throw result = player.getThrow();
@@ -113,12 +113,22 @@ public class PlayerTest
     public void testMakeThrow() 
     {
         System.out.println("Test makeThrow");
-        Player player = new Player("test1");
+        Player player = new Human("test");
+        Throw expResult = Throw.ROCK;
+        player.makeThrow(Throw.ROCK);
+        Throw result = player.getThrow();
+        assertEquals(expResult, result);
 
         
-        player.makeThrow(Throw.ROCK);
+        Throw expResult2 = Throw.PAPER;
         player.makeThrow(Throw.PAPER);
-        player.makeThrow(Throw.SCISSORS);
+        Throw result2 = player.getThrow();
+        assertEquals(expResult2, result2);
+        
+        Throw expResult3 = Throw.PAPER;
+        player.makeThrow(Throw.PAPER);
+        Throw result3 = player.getThrow();
+        assertEquals(expResult3, result3);
 
     }
 }
