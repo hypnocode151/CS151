@@ -10,25 +10,25 @@ public class ThrowHistorian {
         private ArrayList<Throw> recordThrow = new ArrayList<Throw>(); 
     
         
-    public void throwRecord(Player Human, Player Computer) {
-        recordThrow.add(Human.getThrow());
-        recordThrow.add(Computer.getThrow());
+     public void Recordthrow(Player human, Player computer) {
+        recordThrow.add(human.getThrow());
+        recordThrow.add(computer.getThrow());
     }
     
     
         public ArrayList getLastSequence(int n){
         ListIterator itr = recordThrow.listIterator();
         ArrayList newSequence = new ArrayList();
+        int start;
         
         if(recordThrow.size() < n) {
-         newSequence = null;   
-        }
-        
-        for(int i = 0 ; i < n ; i++) {
-            newSequence.add(itr.previous());
-        }
-        
-                
+            newSequence = new ArrayList();
+            start = recordThrow.size() - n;
+                for(int i = 0 ; i < n ; i++) {
+                    newSequence.add(recordThrow.get(start));
+                    start++;
+                }
+      }           
         return newSequence;
     }
    
