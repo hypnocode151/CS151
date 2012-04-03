@@ -19,19 +19,39 @@ public class PlayerTest
         Player player = new Human("test1");
         Player player2 = new Human("test2");
 
-
+        int score1 = player.getScore();
+        int score2 = player2.getScore();
         player.makeThrow(Throw.ROCK);
         player2.makeThrow(Throw.PAPER);
         player2.compareThrows(player);
+        assertEquals(score1,player.getScore());
+        assertEquals(score2+1, player2.getScore());
         
+        score1 = player.getScore();
+        score2 = player2.getScore();
         player.makeThrow(Throw.ROCK);
         player2.makeThrow(Throw.SCISSORS);
         player2.compareThrows(player);
+        assertEquals(score1+1,player.getScore());
+        assertEquals(score2, player2.getScore());
         
+        score1 = player.getScore();
+        score2 = player2.getScore();
         player.makeThrow(Throw.PAPER);
         player2.makeThrow(Throw.SCISSORS);
         player2.compareThrows(player);
-
+        assertEquals(score1,player.getScore());
+        assertEquals(score2+1, player2.getScore());
+        
+        score1 = player.getScore();
+        score2 = player2.getScore();
+        player.makeThrow(Throw.PAPER);
+        player2.makeThrow(Throw.ROCK);
+        player2.compareThrows(player);
+        assertEquals(score1+1,player.getScore());
+        assertEquals(score2, player2.getScore());
+        
+       
     }
 
     /**

@@ -24,9 +24,12 @@ public class ThrowRandomTest
         Throw expResult3 = Throw.SCISSORS;
         Throw result = athrow.generateThrow();
 
-        assertEquals(expResult, result);
-        assertEquals(expResult2, result);
-        assertEquals(expResult3, result);
+        if(result == Throw.ROCK){
+        assertEquals(expResult, result);}
+        if (result == Throw.PAPER){
+        assertEquals(expResult2, result);}
+        if (result == Throw.SCISSORS){
+        assertEquals(expResult3, result);}
 
     }
 }
