@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 public class ComputerTest 
 {
     String name;
-    CalculatorType type;
+    CalculatorType type = CalculatorType.RANDOM;
 
     /**
      * Test of makeThrow method, of class Computer.
@@ -25,8 +25,25 @@ public class ComputerTest
     {
         System.out.println("Test makeThrow");
         Computer comp = new Computer(name, type);
-        comp.makeThrow(Throw.ROCK);
-        comp.makeThrow(Throw.PAPER);
-        comp.makeThrow(Throw.SCISSORS);
+        
+        comp.makeThrow(null);
+        runAssert(comp.getThrow());
+        
+        comp.makeThrow(null);
+        runAssert(comp.getThrow());
+        
+        comp.makeThrow(null);
+        runAssert(comp.getThrow());
+        
+    }
+    
+    private void runAssert(Throw compThrow)
+    {
+        if (compThrow == Throw.ROCK)
+            assertEquals(Throw.ROCK, compThrow);
+        if (compThrow == Throw.PAPER)
+            assertEquals(Throw.PAPER, compThrow);
+        if (compThrow == Throw.SCISSORS)
+            assertEquals(Throw.SCISSORS, compThrow);
     }
 }
