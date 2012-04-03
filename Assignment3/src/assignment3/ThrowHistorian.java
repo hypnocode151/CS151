@@ -1,7 +1,6 @@
 package assignment3;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 /**
  *
@@ -9,7 +8,7 @@ import java.util.ListIterator;
  */
 public class ThrowHistorian 
 {
-    private static ArrayList<Throw> recordThrow = new ArrayList<Throw>(); 
+    private static ArrayList<Throw> recordThrow = new ArrayList(); 
 
     /*
     * Saves the throw records into arraylist
@@ -27,7 +26,7 @@ public class ThrowHistorian
     public static ArrayList getLastSequence(int n)
     {
         ArrayList newSequence = new ArrayList();
-        int start = 0;
+        int start;
 
         if(recordThrow.size() < n) 
         {
@@ -51,28 +50,28 @@ public class ThrowHistorian
      */
     public static int searchSequence(ArrayList<Throw> Sequence) 
     {
-        ListIterator itr = recordThrow.listIterator(); //makes iterator for 
-                                                //arraylist of total record
         int counter = 0;
         
-        
-            for(int i = 0 ; i < recordThrow.size() ; i = i + 2)  {
-                for(int j = 0 ; j < Sequence.size() ; j++) {
-                    int k = i;
-                    while(recordThrow.get(k).equals(Sequence.get(j))){
-                        if(Sequence.size() <= j){
-                            counter++;
-                        }
-                        k=k+2; j++;
+        for(int i = 0; i < recordThrow.size(); i = i + 2)  
+        {
+            for(int j = 0; j < Sequence.size(); j++) 
+            {
+                int k = i;
+                while(k < recordThrow.size() && recordThrow.get(k).equals(Sequence.get(j)))
+                {
+                    if(Sequence.size() <= j)
+                    {
+                        counter++;
                     }
+                    k++; 
+                    j++;
                 }
             }
-        
-        
+        }
+
         return counter;
     }
-    
-    
+       
     /*
      * Clears the array so that it can be reused in another round.
      */
@@ -81,6 +80,5 @@ public class ThrowHistorian
         recordThrow.clear();
     }
 
- 
 }
  
