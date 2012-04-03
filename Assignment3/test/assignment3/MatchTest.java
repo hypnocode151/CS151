@@ -8,7 +8,7 @@ import java.io.ByteArrayInputStream;
 
 /**
  *
- * @author ttran
+ * @author Hypnocode
  */
 public class MatchTest 
 {

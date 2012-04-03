@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ttran
+ * @author Hypnocode
  */
 public class PlayerTest 
 {   
