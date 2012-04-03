@@ -99,16 +99,51 @@ public class ComputerTest
         switch (n)
         {
             case 1:
-                
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(p, s);
+                ThrowHistorian.recordThrows(p, s);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(r, p);
                 break;
             case 2:
-                
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(p, p);
                 break;
             case 3:
-                
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
                 break;
             case 4:
-                
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(p, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
+                ThrowHistorian.recordThrows(r, p);
+                ThrowHistorian.recordThrows(s, p);
                 break;
             case 5:
                 ThrowHistorian.recordThrows(r, p);
