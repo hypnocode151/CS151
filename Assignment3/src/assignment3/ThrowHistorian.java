@@ -18,4 +18,14 @@ public class ThrowHistorian
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
+    static ArrayList<Throw> getLastSequence(int n) 
+    {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    static int searchSequence(ArrayList<Throw> throwList) 
+    {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
 }
