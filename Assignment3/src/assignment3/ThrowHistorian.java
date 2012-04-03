@@ -14,7 +14,7 @@ public class ThrowHistorian
     /*
     * Saves the throw records into arraylist
     */
-    public static void recordThrows(Throw human, Throw computer) 
+   public static void recordThrows(Throw human, Throw computer) 
     {
         recordThrow.add(human);
         recordThrow.add(computer);
@@ -27,7 +27,7 @@ public class ThrowHistorian
     public static ArrayList getLastSequence(int n)
     {
         ArrayList newSequence = new ArrayList();
-        int start;
+        int start = 0;
 
         if(recordThrow.size() < n) 
         {
@@ -44,7 +44,7 @@ public class ThrowHistorian
         return newSequence;
     }
     
-     /*
+    /*
      * Searches the ArrayList to find if there are matches with
      * a selected pattern that has previously been seen
      * @return the highest counter
@@ -80,6 +80,7 @@ public class ThrowHistorian
     {
         recordThrow.clear();
     }
-}
+
  
+}
  
