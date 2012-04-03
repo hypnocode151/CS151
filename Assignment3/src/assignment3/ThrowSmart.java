@@ -40,42 +40,38 @@ public class ThrowSmart extends ThrowCalculator
             scissorsSequence = ThrowHistorian.searchSequence(throwList);
             throwList.remove(throwList.size() - 1);
 
-            // Since Paper beats Rock rockSequence must be larger than paperSequence
-            if (rockSequence > paperSequence)
-            {
-                // Since Rock beats Scissors if sequences are equal Rock is chosen
-                if (rockSequence >= scissorsSequence)
-                    return Throw.ROCK;
-                else
-                    return Throw.SCISSORS;
-            }
+            // 
+            if (rockSequence > scissorsSequence && rockSequence >= paperSequence)
+                return Throw.PAPER;
+            else if (paperSequence > rockSequence && paperSequence >= scissorsSequence)
+                return Throw.SCISSORS;
+            else if (scissorsSequence > paperSequence && scissorsSequence >= rockSequence)
+                return Throw.ROCK;
             else
-            {
-                // Since Scissors beats Paper paperSequence must be larger 
-                // than scissorSequence
-                if (paperSequence > scissorsSequence)
-                    return Throw.PAPER;
-                else
-                    return Throw.SCISSORS;
-            }
+                return randomThrow();
         }
         else
         {
-            Random rand = new Random();
-            Throw myThrow = null;
-            
-            switch(rand.nextInt(3))
-            {
-                case 0: myThrow =  Throw.ROCK;
-                    break;
-                case 1: myThrow =  Throw.PAPER;
-                    break;
-                case 2: myThrow =  Throw.SCISSORS;
-                    break;
-            }
-            
-            return myThrow;
+            return randomThrow();
         }
+    }
+    
+    private Throw randomThrow()
+    {
+        Random rand = new Random();
+        Throw myThrow = null;
+
+        switch(rand.nextInt(3))
+        {
+            case 0: myThrow =  Throw.ROCK;
+                break;
+            case 1: myThrow =  Throw.PAPER;
+                break;
+            case 2: myThrow =  Throw.SCISSORS;
+                break;
+        }
+
+        return myThrow;
     }
     
 }

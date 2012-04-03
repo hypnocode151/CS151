@@ -28,7 +28,7 @@ public class ThrowHistorian
         ArrayList newSequence = new ArrayList();
         int start;
 
-        if(recordThrow.size() < n) 
+        if(recordThrow.size() >= n) 
         {
             newSequence = new ArrayList();
             start = recordThrow.size() - n;
@@ -51,22 +51,29 @@ public class ThrowHistorian
     public static int searchSequence(ArrayList<Throw> Sequence) 
     {
         int counter = 0;
+        boolean match = true;
         
-        for(int i = 0; i < recordThrow.size(); i = i + 2)  
+        for(int i = 1; i < recordThrow.size() - 1; i = i + 2)  
         {
-            for(int j = 0; j < Sequence.size(); j++) 
+            int k = i;
+            if (recordThrow.size() - k >= Sequence.size())
             {
-                int k = i;
-                while(k < recordThrow.size() && recordThrow.get(k).equals(Sequence.get(j)))
-                {
-                    if(Sequence.size() <= j)
+                for(int j = 0; j < Sequence.size(); j++) 
+                {       
+                    if (!recordThrow.get(k).equals(Sequence.get(j)))
                     {
-                        counter++;
+                        match = false;
+                        j = Sequence.size();
                     }
-                    k++; 
-                    j++;
+                    k++;
                 }
             }
+            else
+                match = false;
+            
+            if(match)
+                counter++;
+            match = true;
         }
 
         return counter;
