@@ -71,6 +71,8 @@ public class Match
         if (round > 0 && madeThrow)
         {
             computer.makeThrow(null);
+            
+            ThrowHistorian.recordThrows(human.getThrow(), computer.getThrow());
                    
             human.compareThrows(computer);
             round--;
