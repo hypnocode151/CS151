@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package assignment3;
 
 import org.junit.Test;
@@ -10,7 +7,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ttran
+ * @author Hypnocode
  */
 public class ComputerTest 
 {
@@ -28,13 +25,13 @@ public class ComputerTest
         System.out.println("Test RandomMakeThrow");
         Computer comp = new Computer(name, type);
         
-        comp.makeThrow(null);
+        comp.makeThrow(Throw.ROCK);
         randomAssert(comp.getThrow());
         
-        comp.makeThrow(null);
+        comp.makeThrow(Throw.PAPER);
         randomAssert(comp.getThrow());
         
-        comp.makeThrow(null);
+        comp.makeThrow(Throw.SCISSORS);
         randomAssert(comp.getThrow());
         
     }
