@@ -66,9 +66,13 @@ public class ThrowHistorian {
         return counter;
     }
     
-     static void reset() 
+    
+    /*
+     * Clears the array so that it can be reused in another round.
+     */
+     public void reset() 
     {
-        throw new UnsupportedOperationException("Not yet implemented");
+        recordThrow.clear();
     }
 }
  
