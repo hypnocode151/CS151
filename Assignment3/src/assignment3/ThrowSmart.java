@@ -62,13 +62,19 @@ public class ThrowSmart extends ThrowCalculator
         else
         {
             Random rand = new Random();
+            Throw myThrow = null;
             
             switch(rand.nextInt(3))
             {
-                case 0: return Throw.ROCK;
-                case 1: return Throw.PAPER;
-                case 2: return Throw.SCISSORS;
+                case 0: myThrow =  Throw.ROCK;
+                    break;
+                case 1: myThrow =  Throw.PAPER;
+                    break;
+                case 2: myThrow =  Throw.SCISSORS;
+                    break;
             }
+            
+            return myThrow;
         }
     }
     
