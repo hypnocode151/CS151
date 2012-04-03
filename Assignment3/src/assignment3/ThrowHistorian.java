@@ -12,7 +12,7 @@ public class ThrowHistorian {
      /*
      * Saves the throw records into arraylist
      */
-     public void Recordthrow(Player human, Player computer) {
+     public void recordThrows(Player human, Player computer) {
         recordThrow.add(human.getThrow());
         recordThrow.add(computer.getThrow());
     }
