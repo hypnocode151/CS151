@@ -14,7 +14,7 @@ public class ThrowHistorian
     /*
     * Saves the throw records into arraylist
     */
-    public void recordThrows(Throw human, Throw computer) 
+    public static void recordThrows(Throw human, Throw computer) 
     {
         recordThrow.add(human);
         recordThrow.add(computer);
@@ -87,7 +87,7 @@ public class ThrowHistorian
     /*
      * Clears the array so that it can be reused in another round.
      */
-    public void reset() 
+    public static void reset() 
     {
         recordThrow.clear();
     }
