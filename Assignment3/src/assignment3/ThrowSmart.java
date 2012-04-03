@@ -1,6 +1,7 @@
 package assignment3;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * ThrowSmart is an extension of ThrowCalculator class that makes a decision
@@ -22,38 +23,52 @@ public class ThrowSmart extends ThrowCalculator
         int n = 3;
         throwList = ThrowHistorian.getLastSequence(n);
         
-        // Check for Sequence + Rock
-        throwList.add(Throw.ROCK);
-        rockSequence = ThrowHistorian.searchSequence(throwList);
-        throwList.remove(throwList.size() - 1);
-        
-        // Check for Sequence + Paper
-        throwList.add(Throw.PAPER);
-        paperSequence = ThrowHistorian.searchSequence(throwList);
-        throwList.remove(throwList.size() - 1);
-        
-        // Check for Sequence + Scissors
-        throwList.add(Throw.SCISSORS);
-        scissorsSequence = ThrowHistorian.searchSequence(throwList);
-        throwList.remove(throwList.size() - 1);
-        
-        // Since Paper beats Rock rockSequence must be larger than paperSequence
-        if (rockSequence > paperSequence)
+        if (!throwList.isEmpty())
         {
-            // Since Rock beats Scissors if sequences are equal Rock is chosen
-            if (rockSequence >= scissorsSequence)
-                return Throw.ROCK;
+            // Check for Sequence + Rock
+            throwList.add(Throw.ROCK);
+            rockSequence = ThrowHistorian.searchSequence(throwList);
+            throwList.remove(throwList.size() - 1);
+
+            // Check for Sequence + Paper
+            throwList.add(Throw.PAPER);
+            paperSequence = ThrowHistorian.searchSequence(throwList);
+            throwList.remove(throwList.size() - 1);
+
+            // Check for Sequence + Scissors
+            throwList.add(Throw.SCISSORS);
+            scissorsSequence = ThrowHistorian.searchSequence(throwList);
+            throwList.remove(throwList.size() - 1);
+
+            // Since Paper beats Rock rockSequence must be larger than paperSequence
+            if (rockSequence > paperSequence)
+            {
+                // Since Rock beats Scissors if sequences are equal Rock is chosen
+                if (rockSequence >= scissorsSequence)
+                    return Throw.ROCK;
+                else
+                    return Throw.SCISSORS;
+            }
             else
-                return Throw.SCISSORS;
+            {
+                // Since Scissors beats Paper paperSequence must be larger 
+                // than scissorSequence
+                if (paperSequence > scissorsSequence)
+                    return Throw.PAPER;
+                else
+                    return Throw.SCISSORS;
+            }
         }
         else
         {
-            // Since Scissors beats Paper paperSequence must be larger 
-            // than scissorSequence
-            if (paperSequence > scissorsSequence)
-                return Throw.PAPER;
-            else
-                return Throw.SCISSORS;
+            Random rand = new Random();
+            
+            switch(rand.nextInt(3))
+            {
+                case 0: return Throw.ROCK;
+                case 1: return Throw.PAPER;
+                case 2: return Throw.SCISSORS;
+            }
         }
     }
     
