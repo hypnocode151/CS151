@@ -79,6 +79,7 @@ public class ComputerTest
         setupThrowHistorian(5);
         ThrowHistorian.reset();
         computer.makeThrow(null);
+        //assertEquals(Throw.???, computer.getThrow());
         
         // Algorithm conditions
         // Need a ThrowHistorian for each condition.
