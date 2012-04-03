@@ -51,6 +51,23 @@ public class PlayerTest
         assertEquals(score1+1,player.getScore());
         assertEquals(score2, player2.getScore());
         
+        score1 = player.getScore();
+        score2 = player2.getScore();
+        player.makeThrow(Throw.SCISSORS);
+        player2.makeThrow(Throw.ROCK);
+        player2.compareThrows(player);
+        assertEquals(score1,player.getScore());
+        assertEquals(score2+1, player2.getScore());
+       
+        
+        score1 = player.getScore();
+        score2 = player2.getScore();
+        player.makeThrow(Throw.SCISSORS);
+        player2.makeThrow(Throw.PAPER);
+        player2.compareThrows(player);
+        assertEquals(score1+1,player.getScore());
+        assertEquals(score2, player2.getScore());
+        
        
     }
 
