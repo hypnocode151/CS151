@@ -26,7 +26,6 @@ public class ThrowHistorian
      */
     public static ArrayList getLastSequence(int n)
     {
-        ListIterator itr = recordThrow.listIterator();
         ArrayList newSequence = new ArrayList();
         int start;
 
@@ -63,8 +62,8 @@ public class ThrowHistorian
             Sequence = null;   
         }
         
-        while(itr.hasNext()) 
-        {
+        
+        
             for(int i = 0 ; i < recordThrow.size() ; i = i + 2) 
             {
                 for(int j = 0 ; j < Sequence.size() ; j++) 
@@ -78,7 +77,7 @@ public class ThrowHistorian
                     
                 }
             }
-        }
+        
         
         return counter;
     }
@@ -92,5 +91,6 @@ public class ThrowHistorian
         recordThrow.clear();
     }
 }
+ 
  
  
