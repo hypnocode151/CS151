@@ -49,7 +49,7 @@ public class ThrowHistorian
      * a selected pattern that has previously been seen
      * @return the highest counter
      */
-    public static int searchSequence(ArrayList<Throw> Sequence) 
+     public static int searchSequence(ArrayList<Throw> Sequence) 
     {
         ListIterator itr = recordThrow.listIterator(); //makes iterator for 
                                                 //arraylist of total record
@@ -59,7 +59,7 @@ public class ThrowHistorian
         
         if(recordThrow.size() < Sequence.size()) 
         {
-            Sequence = null;   
+            Sequence = new ArrayList();
         }
         
         
@@ -68,13 +68,12 @@ public class ThrowHistorian
             {
                 for(int j = 0 ; j < Sequence.size() ; j++) 
                 {
-                    if(recordThrow.get(i).equals(Sequence.get(i))) 
-                    {
-                        temp_counter++;
-                        if(temp_counter % Sequence.size() == 0)
+                    while(recordThrow.get(j).equals(Sequence.get(i))){
+                        if(Sequence.size() <= j){
                             counter++;
+                        }
+                        i=i+2; j++;
                     }
-                    
                 }
             }
         
