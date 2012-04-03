@@ -1,6 +1,5 @@
 package assignment3;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ListIterator;
 /**
  *
@@ -23,7 +22,8 @@ public class ThrowHistorian {
      * retrieves the last n elements from the array
      * @return the last n elements.
      */
-        public ArrayList getLastSequence(int n){
+        public static ArrayList getLastSequence(int n){
+        ArrayList<Throw> recordThrow = new ArrayList<Throw>();
         ListIterator itr = recordThrow.listIterator();
         ArrayList newSequence = new ArrayList();
         int start;
@@ -45,7 +45,8 @@ public class ThrowHistorian {
      * a selected pattern that has previously been seen
      * @return the highest counter
      */
-    public int searchSequence(ArrayList<Throw> Sequence) {
+    public static int searchSequence(ArrayList<Throw> Sequence) {
+        ArrayList<Throw> recordThrow = new ArrayList<Throw>();
         ListIterator itr = recordThrow.listIterator(); //makes iterator for 
                                                 //arraylist of total record
         int counter = 0; //sets counter
