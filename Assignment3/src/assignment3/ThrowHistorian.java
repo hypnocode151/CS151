@@ -10,12 +10,19 @@ public class ThrowHistorian {
         private ArrayList<Throw> recordThrow = new ArrayList<Throw>(); 
     
         
+     /*
+     * Saves the throw records into arraylist
+     */
      public void Recordthrow(Player human, Player computer) {
         recordThrow.add(human.getThrow());
         recordThrow.add(computer.getThrow());
     }
     
     
+    /*
+     * retrieves the last n elements from the array
+     * @return the last n elements.
+     */
         public ArrayList getLastSequence(int n){
         ListIterator itr = recordThrow.listIterator();
         ArrayList newSequence = new ArrayList();
@@ -33,6 +40,11 @@ public class ThrowHistorian {
     }
    
     
+    /*
+     * Searches the ArrayList to find if there are matches with
+     * a selected pattern that has previously been seen
+     * @return the highest counter
+     */
     public int searchSequence(ArrayList<Throw> Sequence) {
         ListIterator itr = recordThrow.listIterator(); //makes iterator for 
                                                 //arraylist of total record
