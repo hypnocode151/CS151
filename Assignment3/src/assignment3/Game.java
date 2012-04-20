@@ -46,11 +46,12 @@ public class Game
         
         if (GUI)
         {
-            while (GameFrame.gameDisplay.isVisible())
+            while (!GameFrame.gameDisplay.selectionMade())
             {
                 System.out.println();
             }
             
+            GameFrame.gameDisplay.resetSelection();
             rounds = GameFrame.gameDisplay.getRounds();
             calculatorType = GameFrame.gameDisplay.getcalcType();
             requestType = RequestType.GUIREQUEST;
