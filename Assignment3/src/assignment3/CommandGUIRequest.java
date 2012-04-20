@@ -14,8 +14,11 @@ public class CommandGUIRequest extends CommandRequestor
     @Override
     public Command requestCommand() 
     {
-        //while (gameDisplay)
-        return Command.HELP;
+        while (!GameFrame.gameDisplay.selectionMade())
+        {
+        }
+        
+        return GameFrame.gameDisplay.getSelection();
     }
     
 }

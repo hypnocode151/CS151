@@ -7,21 +7,21 @@ package assignment3;
 public class GameDisplay extends javax.swing.JFrame 
 {
 
-    private static int rounds;
-    private static CalculatorType calcType;
-    private static boolean selectionMade;
+    private int rounds;
+    private CalculatorType calcType;
+    private boolean selectionMade;
+    private Command selection;
     
     /**
      * Creates new form GameDisplay
      */
-/*
     public GameDisplay() 
     {
         initComponents();
         startButton.setEnabled(false);
         jLayeredPanel2.setVisible(false);
     }
-*/
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -317,6 +317,11 @@ public class GameDisplay extends javax.swing.JFrame
     public boolean selectionMade()
     {
         return selectionMade;
+    }
+    
+    public Command getSelection()
+    {
+        return selection;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
