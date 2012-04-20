@@ -6,5 +6,17 @@ package assignment3;
  */
 public class GameFrame 
 {
-    public static GameDisplay gameDisplay = new GameDisplay();
+    public static GameDisplay gameDisplay;
+    private static boolean GUI = false;
+    
+    public static void setupGUI()
+    {
+        gameDisplay = new GameDisplay();
+        GUI = true;
+    }
+    
+    public static boolean isGUI()
+    {
+        return GUI;
+    }
 }
