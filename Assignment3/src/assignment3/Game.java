@@ -15,9 +15,9 @@ public class Game
     private static int rounds = 0;
     private static int calcType;
     private static CalculatorType calculatorType;
-    //private static GameDisplay gameDisplay;
     private static boolean GUI = true;
     private static RequestType requestType;
+    
     /*
      * make a main menu with all the options
      */
@@ -25,14 +25,11 @@ public class Game
     {
         Scanner scan = new Scanner(System.in);
         
-        //Display logo and prompt for number of throws
         System.out.println("************************************");
         System.out.println("*    Rock Paper Scissors 2012      *");
         System.out.println("*            Hypnocode             *");
         System.out.println("************************************");
         System.out.println("\n\n\n\n\n");
-        //System.out.println("Please enter the number of throws");
-        //rounds = scan.nextInt();
         
         System.out.println("\033");
     }
@@ -63,7 +60,6 @@ public class Game
             try
             {
                 rounds = Integer.parseInt(args[0]);
-                //System.out.println(rounds + " = rounds");
             }
             catch (NumberFormatException expr)
             {
@@ -75,7 +71,6 @@ public class Game
             try
             {
                 calcType = Integer.parseInt(args[1]);
-                //System.out.println(calcType + " = calcType");
             }
             catch (NumberFormatException expr)
             {
@@ -100,4 +95,5 @@ public class Game
     }
 
 }
+
 
