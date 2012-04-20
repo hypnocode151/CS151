@@ -19,14 +19,14 @@ public class MatchTest
     public void testIsMatchOver()
     {
         System.out.println("Test isMatchOver");
-        Match match  = new Match(1,1);
-        boolean expResult = false;
+        Match match  = new Match(3,1,RequestType.GUIREQUEST);
+        boolean expResult = true;
         boolean result = match.isMatchOver();
         assertEquals(expResult, result);
         
-        match = new Match(0,1);
-        expResult = true;
-        result = match.isMatchOver();
-        assertEquals(expResult, result);
+        
+        
+        
+        
     }
 }
