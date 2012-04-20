@@ -16,7 +16,7 @@ public class Game
     private static int calcType;
     private static CalculatorType calculatorType;
     //private static GameDisplay gameDisplay;
-    private static boolean GUI = true;
+    private static boolean GUI = false;
     private static RequestType requestType;
     /*
      * make a main menu with all the options
@@ -40,12 +40,12 @@ public class Game
      * Run the game.
      */
     public static void main(String[] args)
-    {
-        //gameDisplay = new GameDisplay();
-        GameFrame.gameDisplay.setVisible(true);
-        
+    {      
         if (GUI)
         {
+            GameFrame.setupGUI();
+            GameFrame.gameDisplay.setVisible(true);
+            
             while (!GameFrame.gameDisplay.selectionMade())
             {
                 Thread.yield();
