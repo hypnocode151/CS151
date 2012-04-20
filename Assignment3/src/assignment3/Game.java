@@ -42,9 +42,20 @@ public class Game
         gameDisplay = new GameDisplay();
         gameDisplay.setVisible(true);
         
+        if (GUI)
+        {
+            while (gameDisplay.isVisible())
+            {
+                System.out.println();
+            }
+            
+        }
+        
+        MainMenu();
+        
         if (!GUI)
         {
-            MainMenu();
+            
 
             try
             {
