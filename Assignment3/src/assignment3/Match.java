@@ -9,25 +9,27 @@ public class Match
     private CalculatorType calcType;
     private Player human = new Human("Player");
     private Player computer;
-    private int round;
+    private int rounds;
+    private int currentRound = 0;
     private RequestType requestType;
+    private boolean computerHasThrown;
 
     /*
      * Creates a Match
      * @param int the number of the rounds. 
      * @param int the type of the calculator.
      */
-    public Match(int round, int calcType, RequestType requestType)
+    public Match(int rounds, int calcType, RequestType requestType)
     {
-        this.round = round;
+        this.rounds = rounds;
         this.calcType = CalculatorType.lookUpType(calcType);
         computer = new Computer("Computer", this.calcType);
         this.requestType = requestType;
     }
 
-    public Match(int round, CalculatorType calculatorType, RequestType requestType) 
+    public Match(int rounds, CalculatorType calculatorType, RequestType requestType) 
     {
-        this.round = round;
+        this.rounds = rounds;
         calcType = calculatorType;
         computer = new Computer("Computer", this.calcType);
         this.requestType = requestType;
@@ -49,6 +51,14 @@ public class Match
     public void makeThrows()
     {
         boolean madeThrow = false;
+        
+        if (!computerHasThrown)
+        {
+            computer.makeThrow(null);
+            computerHasThrown = true;
+        }
+        if (GameFrame.isGUI())
+            GameFrame.gameDisplay.updateThrow(computer.getThrow());
         
         CommandRequestor cr = CommandRequestor.makeRequestor(requestType);
         
@@ -73,18 +83,25 @@ public class Match
                 displayScores();
                 break;
             case QUIT:
-                round = 0;
+                currentRound = 0;
                 break;
         }
         
-        if (round > 0 && madeThrow)
+        if (currentRound < rounds && madeThrow)
         {
-            computer.makeThrow(null);
-            
             ThrowHistorian.recordThrows(human.getThrow(), computer.getThrow());
                    
             human.compareThrows(computer);
-            round--;
+            currentRound++;
+            
+            if (GameFrame.isGUI())
+            {
+                GameFrame.gameDisplay.updateScores(human.getScore(), computer.getScore());
+                GameFrame.gameDisplay.updateRound(currentRound);
+                GameFrame.gameDisplay.updateImages(human.getThrow(), computer.getThrow());
+            }
+            
+            computerHasThrown = false;
         }
     }
     /*
@@ -92,21 +109,28 @@ public class Match
      */
     public void declareWinner()
     {
-        System.out.println(human.getName() + " score = " + human.getScore());
-        System.out.println(computer.getName() + " score = " 
-                + computer.getScore());
-        
-        if(human.getScore() < computer.getScore())
+        if (!GameFrame.isGUI())
         {
-            System.out.println("The winner is " + computer.getName());
-        }
-        else if (human.getScore() > computer.getScore())
-        {
-            System.out.println("The winner is " + human.getName());
+            System.out.println(human.getName() + " score = " + human.getScore());
+            System.out.println(computer.getName() + " score = " 
+                    + computer.getScore());
+
+            if(human.getScore() < computer.getScore())
+            {
+                System.out.println("The winner is " + computer.getName());
+            }
+            else if (human.getScore() > computer.getScore())
+            {
+                System.out.println("The winner is " + human.getName());
+            }
+            else
+            {
+                System.out.println("This game is a tie");
+            }
         }
         else
         {
-            System.out.println("This game is a tie");
+            GameFrame.gameDisplay.declareWinner();
         }
     }
     /*
@@ -115,7 +139,7 @@ public class Match
      */
     public boolean isMatchOver()
     {
-        if(round < 1)
+        if(currentRound >= rounds)
             return true;
         else
             return false;
