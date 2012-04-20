@@ -14,8 +14,10 @@ public class Game
     private static Match aMatch;
     private static int rounds = 0;
     private static int calcType;
+    private static CalculatorType calculatorType;
     private static GameDisplay gameDisplay;
     private static boolean GUI = true;
+    private static RequestType requestType;
     /*
      * make a main menu with all the options
      */
@@ -39,8 +41,8 @@ public class Game
      */
     public static void main(String[] args)
     {
-        gameDisplay = new GameDisplay();
-        gameDisplay.setVisible(true);
+        //gameDisplay = new GameDisplay();
+        GameDisplay.setVisible(true);
         
         if (GUI)
         {
@@ -49,14 +51,14 @@ public class Game
                 System.out.println();
             }
             
+            rounds = gameDisplay.getRounds();
+            calculatorType = gameDisplay.getcalcType();
+            requestType = RequestType.GUIREQUEST;
         }
-        
-        MainMenu();
         
         if (!GUI)
         {
-            
-
+            MainMenu();
             try
             {
                 rounds = Integer.parseInt(args[0]);
@@ -80,9 +82,13 @@ public class Game
                 System.out.println("Random Calculator selected");
                 calcType = 0;
             }
+            requestType = RequestType.TEXTREQUEST;
         }
         
-        aMatch = new Match(rounds, calcType);
+        if (!GUI)
+            aMatch = new Match(rounds, calcType, requestType);
+        else
+            aMatch = new Match(rounds, calculatorType, requestType);
         
         while(!aMatch.isMatchOver())
         {
