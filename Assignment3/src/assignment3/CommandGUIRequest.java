@@ -16,9 +16,12 @@ public class CommandGUIRequest extends CommandRequestor
     {
         while (!GameFrame.gameDisplay.selectionMade())
         {
-            System.out.println();
+            //System.out.println();
+            Thread.yield();
         }
+        
+        Command command = GameFrame.gameDisplay.getSelection();
         GameFrame.gameDisplay.resetSelection();
-        return GameFrame.gameDisplay.getSelection();
+        return command;
     }
 }

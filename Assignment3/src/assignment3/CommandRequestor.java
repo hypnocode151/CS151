@@ -17,6 +17,8 @@ public abstract class CommandRequestor
         {
             case TEXTREQUEST:
                 return new CommandTextRequest();
+            case GUIREQUEST:
+                return new CommandGUIRequest();
         }
         return null;
     }

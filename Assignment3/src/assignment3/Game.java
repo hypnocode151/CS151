@@ -48,7 +48,7 @@ public class Game
         {
             while (!GameFrame.gameDisplay.selectionMade())
             {
-                System.out.println();
+                Thread.yield();
             }
             
             GameFrame.gameDisplay.resetSelection();
