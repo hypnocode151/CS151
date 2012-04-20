@@ -1,29 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment3;
 
 /**
  *
- * @author D4rkFr4g
+ * @author HypnoCode
  */
 public class GameDisplay extends javax.swing.JFrame 
 {
 
-    private int rounds;
-    private CalculatorType calcType;
+    private static int rounds;
+    private static CalculatorType calcType;
+    private static boolean selectionMade;
     
     /**
      * Creates new form GameDisplay
      */
+/*
     public GameDisplay() 
     {
         initComponents();
         startButton.setEnabled(false);
         jLayeredPanel2.setVisible(false);
     }
-
+*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -305,6 +303,21 @@ public class GameDisplay extends javax.swing.JFrame
                 new GameDisplay().setVisible(true);
             }
         });
+    }
+    
+    public int getRounds()
+    {
+        return rounds;
+    }
+    
+    public CalculatorType getcalcType()
+    {
+        return calcType;
+    }
+    
+    public boolean selectionMade()
+    {
+        return selectionMade;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

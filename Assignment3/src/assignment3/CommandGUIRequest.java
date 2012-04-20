@@ -14,7 +14,8 @@ public class CommandGUIRequest extends CommandRequestor
     @Override
     public Command requestCommand() 
     {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //while (gameDisplay)
+        return Command.HELP;
     }
     
 }

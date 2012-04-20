@@ -10,18 +10,27 @@ public class Match
     private Player human = new Human("Player");
     private Player computer;
     private int round;
+    private RequestType requestType;
 
-    private RequestType type = RequestType.TEXTREQUEST;
     /*
      * Creates a Match
      * @param int the number of the rounds. 
      * @param int the type of the calculator.
      */
-    public Match(int round, int calcType)
+    public Match(int round, int calcType, RequestType requestType)
     {
         this.round = round;
         this.calcType = CalculatorType.lookUpType(calcType);
         computer = new Computer("Computer", this.calcType);
+        this.requestType = requestType;
+    }
+
+    public Match(int rounds, CalculatorType calculatorType, RequestType requestType) 
+    {
+        this.round = round;
+        calcType = calculatorType;
+        computer = new Computer("Computer", this.calcType);
+        this.requestType = requestType;
     }
    /*
     * Displas the current score
@@ -41,7 +50,7 @@ public class Match
     {
         boolean madeThrow = false;
         
-        CommandRequestor cr = CommandRequestor.makeRequestor(type);
+        CommandRequestor cr = CommandRequestor.makeRequestor(requestType);
         
         switch (cr.requestCommand())
         {

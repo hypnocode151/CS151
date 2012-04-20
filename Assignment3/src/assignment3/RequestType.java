@@ -7,6 +7,6 @@ package assignment3;
 */
 public enum RequestType
 {
-    TEXTREQUEST
+    TEXTREQUEST, GUIREQUEST
 }
 
