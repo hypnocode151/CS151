@@ -1,5 +1,7 @@
 package assignment3;
 
+import javax.swing.SpinnerNumberModel;
+
 /**
  *
  * @author HypnoCode
@@ -20,6 +22,7 @@ public class GameDisplay extends javax.swing.JFrame
         initComponents();
         startButton.setEnabled(false);
         jLayeredPanel2.setVisible(false);
+        rounds = (Integer) roundSelector.getValue();
     }
     
     /**
@@ -41,9 +44,10 @@ public class GameDisplay extends javax.swing.JFrame
         throwType = new javax.swing.JList();
         jLayeredPanel2 = new javax.swing.JLayeredPane();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        paperButton = new javax.swing.JButton();
+        rockButton = new javax.swing.JButton();
+        scissorsButton = new javax.swing.JButton();
+        helpButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stone, Parchment, Blades Game");
@@ -69,6 +73,11 @@ public class GameDisplay extends javax.swing.JFrame
         });
 
         roundSelector.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(3), Integer.valueOf(1), null, Integer.valueOf(1)));
+        roundSelector.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                roundSelectorStateChanged(evt);
+            }
+        });
 
         throwType.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Random", "Smart" };
@@ -137,32 +146,39 @@ public class GameDisplay extends javax.swing.JFrame
         jPanel3.setMinimumSize(new java.awt.Dimension(300, 280));
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 280));
 
-        jButton1.setText("Parchment");
-        jButton1.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        jButton1.setMinimumSize(new java.awt.Dimension(85, 25));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        paperButton.setText("Parchment");
+        paperButton.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        paperButton.setMinimumSize(new java.awt.Dimension(85, 25));
+        paperButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                paperButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Stone");
-        jButton2.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        jButton2.setMinimumSize(new java.awt.Dimension(82, 25));
-        jButton2.setPreferredSize(new java.awt.Dimension(82, 25));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        rockButton.setText("Stone");
+        rockButton.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        rockButton.setMinimumSize(new java.awt.Dimension(82, 25));
+        rockButton.setPreferredSize(new java.awt.Dimension(82, 25));
+        rockButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                rockButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Blades");
-        jButton3.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        jButton3.setMinimumSize(new java.awt.Dimension(82, 25));
-        jButton3.setPreferredSize(new java.awt.Dimension(82, 25));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        scissorsButton.setText("Blades");
+        scissorsButton.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        scissorsButton.setMinimumSize(new java.awt.Dimension(82, 25));
+        scissorsButton.setPreferredSize(new java.awt.Dimension(82, 25));
+        scissorsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                scissorsButtonActionPerformed(evt);
+            }
+        });
+
+        helpButton.setText("Help");
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
             }
         });
 
@@ -171,22 +187,30 @@ public class GameDisplay extends javax.swing.JFrame
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(rockButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(paperButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scissorsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(helpButton)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
+                .addContainerGap()
+                .addComponent(helpButton)
+                .addGap(179, 179, 179)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rockButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(paperButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scissorsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
 
@@ -227,17 +251,18 @@ public class GameDisplay extends javax.swing.JFrame
         // TODO add your handling;
         jLayeredPane1.setVisible(false);
         jLayeredPanel2.setVisible(true);
+        selectionMade = true;
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void throwTypeValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_throwTypeValueChanged
         // TODO add your handling code here:
-        if (throwType.getSelectedIndex() == -1) {
+        if (throwType.getSelectedIndex() == -1) 
             startButton.setEnabled(false);
-        } else {
+        else
             startButton.setEnabled(true);
-        }
 
-        switch (throwType.getSelectedIndex()) {
+        switch (throwType.getSelectedIndex()) 
+        {
             case 0:
                 calcType = CalculatorType.RANDOM;
                 break;
@@ -248,17 +273,34 @@ public class GameDisplay extends javax.swing.JFrame
 
     }//GEN-LAST:event_throwTypeValueChanged
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void paperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paperButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        selection = Command.THROWPAPER;
+        selectionMade = true;
+    }//GEN-LAST:event_paperButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void rockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rockButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        selection = Command.THROWROCK;
+        selectionMade = true;
+    }//GEN-LAST:event_rockButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void scissorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scissorsButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        selection = Command.THROWSCISSORS;
+        selectionMade = true;
+    }//GEN-LAST:event_scissorsButtonActionPerformed
+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        // TODO add your handling code here:
+        selection = Command.HELP;
+        selectionMade = true;
+    }//GEN-LAST:event_helpButtonActionPerformed
+
+    private void roundSelectorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_roundSelectorStateChanged
+        // TODO add your handling code here:
+        rounds = (Integer) roundSelector.getValue();
+    }//GEN-LAST:event_roundSelectorStateChanged
 
     /**
      * @param args the command line arguments
@@ -323,10 +365,15 @@ public class GameDisplay extends javax.swing.JFrame
     {
         return selection;
     }
+    
+    void resetSelection() 
+    {
+        selectionMade = false;
+        selection = null;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton helpButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -334,8 +381,12 @@ public class GameDisplay extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton paperButton;
+    private javax.swing.JButton rockButton;
     private javax.swing.JSpinner roundSelector;
+    private javax.swing.JButton scissorsButton;
     private javax.swing.JButton startButton;
     private javax.swing.JList throwType;
     // End of variables declaration//GEN-END:variables
+
 }

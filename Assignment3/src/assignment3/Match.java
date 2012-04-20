@@ -25,7 +25,7 @@ public class Match
         this.requestType = requestType;
     }
 
-    public Match(int rounds, CalculatorType calculatorType, RequestType requestType) 
+    public Match(int round, CalculatorType calculatorType, RequestType requestType) 
     {
         this.round = round;
         calcType = calculatorType;
