@@ -137,7 +137,7 @@ public class GameDisplay extends javax.swing.JFrame
 
         winnerDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         winnerDialog.setTitle("Match Complete!");
-        winnerDialog.setBounds(new java.awt.Rectangle(0, 0, 300, 150));
+        winnerDialog.setBounds(getBounds());
         winnerDialog.setMinimumSize(new java.awt.Dimension(300, 150));
         winnerDialog.setPreferredSize(new java.awt.Dimension(300, 150));
         winnerDialog.setResizable(false);
@@ -198,6 +198,8 @@ public class GameDisplay extends javax.swing.JFrame
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 100, 37, 0);
         winnerDialog.getContentPane().add(jButton2, gridBagConstraints);
+
+        winnerDialog.getAccessibleContext().setAccessibleParent(this);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stone, Parchment, Blades Game");
