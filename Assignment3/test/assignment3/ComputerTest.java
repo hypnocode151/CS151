@@ -69,7 +69,16 @@ public class ComputerTest
         
         setupThrowHistorian(4);
         computer.makeThrow(null);
+        if (computer.getThrow() == Throw.ROCK)
+        {
         assertEquals(Throw.ROCK, computer.getThrow());
+        }
+        else if (computer.getThrow() == Throw.PAPER)
+        {
+        assertEquals(Throw.PAPER,computer.getThrow());
+        }
+        else
+        assertEquals(Throw.SCISSORS, computer.getThrow());
         ThrowHistorian.reset();
         
         

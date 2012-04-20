@@ -59,9 +59,5 @@ public class MatchTest
         result = match8.isMatchOver();
         assertEquals(expResult, result);
         
-        
-        
-        
-        
     }
 }
