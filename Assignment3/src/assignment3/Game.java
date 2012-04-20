@@ -15,7 +15,7 @@ public class Game
     private static int rounds = 0;
     private static int calcType;
     private static CalculatorType calculatorType;
-    private static GameDisplay gameDisplay;
+    //private static GameDisplay gameDisplay;
     private static boolean GUI = true;
     private static RequestType requestType;
     /*
@@ -42,17 +42,17 @@ public class Game
     public static void main(String[] args)
     {
         //gameDisplay = new GameDisplay();
-        GameDisplay.setVisible(true);
+        GameFrame.gameDisplay.setVisible(true);
         
         if (GUI)
         {
-            while (gameDisplay.isVisible())
+            while (GameFrame.gameDisplay.isVisible())
             {
                 System.out.println();
             }
             
-            rounds = gameDisplay.getRounds();
-            calculatorType = gameDisplay.getcalcType();
+            rounds = GameFrame.gameDisplay.getRounds();
+            calculatorType = GameFrame.gameDisplay.getcalcType();
             requestType = RequestType.GUIREQUEST;
         }
         
