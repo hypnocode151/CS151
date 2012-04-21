@@ -15,6 +15,7 @@ public class Match
     private int currentRound = 0;
     private RequestType requestType;
     private boolean computerHasThrown;
+    private int ties = 0;
 
     /*
      * Creates a Match
@@ -96,8 +97,15 @@ public class Match
         if (currentRound < rounds && madeThrow)
         {
             ThrowHistorian.recordThrows(human.getThrow(), computer.getThrow());
-                   
+            
+            int humanScore = human.getScore();
+            int compScore = computer.getScore();
+            
             human.compareThrows(computer);
+            
+            if (humanScore == human.getScore() && compScore == computer.getScore())
+                ties++;
+            
             currentRound++;
             
             if (Game.getInterfaceType() == InterfaceType.GUINTERFACE)
@@ -151,6 +159,10 @@ public class Match
             return true;
         else
             return false;
+    }
+    public int getTies()
+    {
+        return ties;
     }
 }
 
