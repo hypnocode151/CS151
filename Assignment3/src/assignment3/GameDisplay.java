@@ -101,7 +101,9 @@ public class GameDisplay extends javax.swing.JFrame
         tiesCount = new javax.swing.JLabel();
 
         dia_help.setTitle("Help");
+        dia_help.setBounds(new java.awt.Rectangle(100, 100, 384, 300));
         dia_help.setMinimumSize(new java.awt.Dimension(384, 300));
+        dia_help.setPreferredSize(new java.awt.Dimension(384, 300));
         dia_help.setResizable(false);
 
         jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
@@ -146,7 +148,7 @@ public class GameDisplay extends javax.swing.JFrame
 
         dia_outcome.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         dia_outcome.setTitle("Match Complete!");
-        dia_outcome.setBounds(getBounds());
+        dia_outcome.setBounds(new java.awt.Rectangle(100, 100, 300, 150));
         dia_outcome.setMinimumSize(new java.awt.Dimension(300, 150));
         dia_outcome.setPreferredSize(new java.awt.Dimension(300, 150));
         dia_outcome.setResizable(false);
@@ -320,10 +322,10 @@ public class GameDisplay extends javax.swing.JFrame
                     .addComponent(pnl_methods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(btn_startgame)
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addGap(0, 40, Short.MAX_VALUE))
         );
 
-        pan_startscreen.setBounds(0, 0, 300, 300);
+        pan_startscreen.setBounds(0, 0, 300, 310);
         con_startlayers.add(pan_startscreen, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         con_gamelayers.setMinimumSize(new java.awt.Dimension(300, 300));
@@ -439,8 +441,8 @@ public class GameDisplay extends javax.swing.JFrame
                                         .addComponent(showComputerThrow)
                                         .addGap(18, 18, 18)
                                         .addComponent(computerThrow, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(36, Short.MAX_VALUE))
+                                .addGap(0, 15, Short.MAX_VALUE)))
+                        .addContainerGap(51, Short.MAX_VALUE))
                     .addGroup(pan_gamescreenLayout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -489,34 +491,28 @@ public class GameDisplay extends javax.swing.JFrame
                 .addGap(20, 20, 20))
         );
 
-        pan_gamescreen.setBounds(0, 0, 320, 300);
+        pan_gamescreen.setBounds(0, 0, 350, 360);
         con_gamelayers.add(pan_gamescreen, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 299, Short.MAX_VALUE)
-                .addComponent(con_gamelayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 299, Short.MAX_VALUE))
+            .addComponent(con_gamelayers, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 299, Short.MAX_VALUE)
-                    .addComponent(con_startlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 299, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(con_startlayers, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 299, Short.MAX_VALUE)
-                .addComponent(con_gamelayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 299, Short.MAX_VALUE))
+            .addComponent(con_gamelayers, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 299, Short.MAX_VALUE)
-                    .addComponent(con_startlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 299, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(con_startlayers, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
