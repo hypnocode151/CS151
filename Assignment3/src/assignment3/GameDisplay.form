@@ -194,15 +194,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="0" pref="149" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
               <Component id="con_gamelayers" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
                   <Component id="con_startlayers" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -210,15 +210,15 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="0" pref="149" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
               <Component id="con_gamelayers" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
                   <Component id="con_startlayers" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="299" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -229,9 +229,6 @@
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[300, 300]"/>
-        </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[300, 300]"/>
         </Property>
       </Properties>
@@ -290,7 +287,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btn_startgame" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -502,6 +499,13 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="tiesLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tiesCount" min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -513,7 +517,12 @@
                           <Component id="round" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="helpButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tiesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tiesCount" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="computerScore" alignment="3" max="32767" attributes="0"/>
@@ -659,6 +668,16 @@
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[120, 230]"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tiesLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ties:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tiesCount">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
           </SubComponents>

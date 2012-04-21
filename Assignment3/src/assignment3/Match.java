@@ -113,6 +113,7 @@ public class Match
                 GameFrame.gameDisplay.updateScores(human.getScore(), computer.getScore());
                 GameFrame.gameDisplay.updateRound(currentRound);
                 GameFrame.gameDisplay.updateImages(human.getThrow(), computer.getThrow());
+                GameFrame.gameDisplay.updateTies(ties);
             }
             
             computerHasThrown = false;
