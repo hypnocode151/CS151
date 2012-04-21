@@ -1,10 +1,11 @@
 package assignment3;
 
 /**
-* Help is a class that is for end-user information on how to interact 
-* with the application.
-* @author Hypnocode
-*/
+ * 
+ * End-user information on how to interact with the application.
+ * @author Hypnocode
+ * 
+ */
 public class Help
 {
     /*

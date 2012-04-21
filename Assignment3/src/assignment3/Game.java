@@ -3,11 +3,11 @@ package assignment3;
 import java.util.Scanner;
 
 /**
-*
-* @author Hypnocode
-* The Game Class creates a match and calls other methods for a match to run.
-* 
-*/
+ *
+ * Executable class that creates a match and calls other methods for a match.
+ * @author Hypnocode
+ * 
+ */
 public class Game
 {
     
@@ -15,15 +15,25 @@ public class Game
     private static int rounds = 0;
     private static int calcType;
     private static CalculatorType calculatorType;
-    private static boolean GUI = true;
-    private static RequestType requestType;
+    
+    // Please assign interfaceType to the interface you want to use.
+    private static InterfaceType interfaceType = InterfaceType.GUINTERFACE;
+    /**
+     * Returns the interface that is being used.
+     * @return interfaceType this is the interface type
+     */
+    public static InterfaceType getInterfaceType()
+    {
+        return interfaceType;
+    }
     
     /*
-     * make a main menu with all the options
+     * Makes a main menu with all the options, for text interface.
+     * Assumes the round limit and algorithm number is specified.
+     * Example: java Game 10 1
      */
     public static void MainMenu()
     {
-        Scanner scan = new Scanner(System.in);
         
         System.out.println("************************************");
         System.out.println("*    Rock Paper Scissors 2012      *");
@@ -33,59 +43,61 @@ public class Game
         
         System.out.println("\033");
     }
+
     /*
-     * Run the game.
+     * Main method to run the game.
      */
     public static void main(String[] args)
-    {      
-        if (GUI)
+    {
+        // Set up the game according to the interface.
+        switch (interfaceType)
         {
-            GameFrame.setupGUI();
-            GameFrame.gameDisplay.setVisible(true);
             
-            while (!GameFrame.gameDisplay.selectionMade())
-            {
-                Thread.yield();
-            }
-            
-            GameFrame.gameDisplay.resetSelection();
-            rounds = GameFrame.gameDisplay.getRounds();
-            calculatorType = GameFrame.gameDisplay.getcalcType();
-            requestType = RequestType.GUIREQUEST;
-        }
-        
-        if (!GUI)
-        {
-            MainMenu();
-            try
-            {
-                rounds = Integer.parseInt(args[0]);
-            }
-            catch (NumberFormatException expr)
-            {
-                System.out.println("Argument is not an integer.");
-                System.out.println("One round selected.");
-                rounds = 1;
-            }
+            case GUINTERFACE: 
+                GameFrame.setupGUI();
+                GameFrame.gameDisplay.setVisible(true);
 
-            try
-            {
-                calcType = Integer.parseInt(args[1]);
-            }
-            catch (NumberFormatException expr)
-            {
-                System.out.println("Argument is not an integer.");
-                System.out.println("Random Calculator selected");
-                calcType = 0;
-            }
-            requestType = RequestType.TEXTREQUEST;
+                while (!GameFrame.gameDisplay.selectionMade())
+                {
+                    Thread.yield();
+                }
+
+                GameFrame.gameDisplay.resetSelection();
+                rounds = GameFrame.gameDisplay.getRounds();
+                calculatorType = GameFrame.gameDisplay.getcalcType();
+                
+                aMatch = new Match(rounds, calculatorType, RequestType.GUIREQUEST);
+                break;
+                
+            case TEXTINTERFACE:
+                MainMenu();
+                try
+                {
+                    rounds = Integer.parseInt(args[0]);
+                }
+                catch (NumberFormatException expr)
+                {
+                    System.out.println("Argument is not an integer.");
+                    System.out.println("One round selected.");
+                    rounds = 1;
+                }
+
+                try
+                {
+                    calcType = Integer.parseInt(args[1]);
+                }
+                catch (NumberFormatException expr)
+                {
+                    System.out.println("Argument is not an integer.");
+                    System.out.println("Random Calculator selected");
+                    calcType = 0;
+                }
+                
+                aMatch = new Match(rounds, calcType, RequestType.TEXTREQUEST);
+                break;
         }
         
-        if (!GUI)
-            aMatch = new Match(rounds, calcType, requestType);
-        else
-            aMatch = new Match(rounds, calculatorType, requestType);
-        
+        // Gameplay loop.
         while(!aMatch.isMatchOver())
         {
             aMatch.makeThrows();

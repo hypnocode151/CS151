@@ -1,9 +1,11 @@
 package assignment3;
+
 /**
-*
-* @author Hypnocode
-* the Match Class manages all the functions of a match.
-*/
+ *
+ * Manages all the functions of a match.
+ * @author Hypnocode
+ * 
+ */
 public class Match
 {
     private CalculatorType calcType;
@@ -34,9 +36,10 @@ public class Match
         computer = new Computer("Computer", this.calcType);
         this.requestType = requestType;
     }
-   /*
-    * Displas the current score
-    */
+
+    /*
+     * Displays the current score
+     */
     private void displayScores()
     {
         System.out.printf(""
@@ -57,8 +60,11 @@ public class Match
             computer.makeThrow(null);
             computerHasThrown = true;
         }
-        if (GameFrame.isGUI())
+        
+        if (Game.getInterfaceType() == InterfaceType.GUINTERFACE)
+        {
             GameFrame.gameDisplay.updateThrow(computer.getThrow());
+        }
         
         CommandRequestor cr = CommandRequestor.makeRequestor(requestType);
         
@@ -94,7 +100,7 @@ public class Match
             human.compareThrows(computer);
             currentRound++;
             
-            if (GameFrame.isGUI())
+            if (Game.getInterfaceType() == InterfaceType.GUINTERFACE)
             {
                 GameFrame.gameDisplay.updateScores(human.getScore(), computer.getScore());
                 GameFrame.gameDisplay.updateRound(currentRound);
@@ -104,18 +110,19 @@ public class Match
             computerHasThrown = false;
         }
     }
+
     /*
-     * Declare a winner based the score.
+     * Declares a winner based on the score.
      */
     public void declareWinner()
     {
-        if (!GameFrame.isGUI())
+        if (Game.getInterfaceType() == InterfaceType.TEXTINTERFACE)
         {
             System.out.println(human.getName() + " score = " + human.getScore());
             System.out.println(computer.getName() + " score = " 
                     + computer.getScore());
 
-            if(human.getScore() < computer.getScore())
+            if (human.getScore() < computer.getScore())
             {
                 System.out.println("The winner is " + computer.getName());
             }
@@ -133,13 +140,14 @@ public class Match
             GameFrame.gameDisplay.declareWinner();
         }
     }
+
     /*
      * Check to see if match is over.
      * @return true if match is over.
      */
     public boolean isMatchOver()
     {
-        if(currentRound >= rounds)
+        if (currentRound >= rounds)
             return true;
         else
             return false;

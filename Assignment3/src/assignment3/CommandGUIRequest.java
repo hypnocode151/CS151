@@ -1,9 +1,11 @@
 package assignment3;
 
 /**
- * The CommandGUIRequest displays a list of options for the user to choose from
- * and translates it to the commands of the game
+ * 
+ * Displays a list of options for the user to choose from and translates it
+ * to the commands of the game.
  * @author HypnoCode
+ * 
  */
 public class CommandGUIRequest extends CommandRequestor
 {

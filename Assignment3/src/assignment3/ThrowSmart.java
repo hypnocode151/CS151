@@ -4,13 +4,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * ThrowSmart is an extension of ThrowCalculator class that makes a decision
- * using information from the ThrowHistorian regarding the past throw sequences.
+ * 
+ * Extension of ThrowCalculator class that makes a decision using information
+ * from the ThrowHistorian regarding the past throw sequences.
  * @author Hypnocode
+ * 
  */
 public class ThrowSmart extends ThrowCalculator
 {
 
+    /**
+     * Generate a throw based on history or randomly picked if it is empty.
+     * @return a smart or random throw
+     */
     @Override
     public Throw generateThrow() 
     {
@@ -40,7 +46,6 @@ public class ThrowSmart extends ThrowCalculator
             scissorsSequence = ThrowHistorian.searchSequence(throwList);
             throwList.remove(throwList.size() - 1);
 
-            // 
             if (rockSequence > scissorsSequence && rockSequence >= paperSequence)
                 return Throw.PAPER;
             else if (paperSequence > rockSequence && paperSequence >= scissorsSequence)
@@ -56,18 +61,22 @@ public class ThrowSmart extends ThrowCalculator
         }
     }
     
+    /**
+     * Returns a random throw.
+     * @return a random throw
+     */
     private Throw randomThrow()
     {
         Random rand = new Random();
         Throw myThrow = null;
 
-        switch(rand.nextInt(3))
+        switch (rand.nextInt(3))
         {
-            case 0: myThrow =  Throw.ROCK;
+            case 0: myThrow = Throw.ROCK;
                 break;
-            case 1: myThrow =  Throw.PAPER;
+            case 1: myThrow = Throw.PAPER;
                 break;
-            case 2: myThrow =  Throw.SCISSORS;
+            case 2: myThrow = Throw.SCISSORS;
                 break;
         }
 

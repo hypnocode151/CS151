@@ -46,7 +46,7 @@ public class ComputerTest
     }
     
     @Test
-    public void testSmartMakeThrow()
+     public void testSmartMakeThrow()
     {
         type = CalculatorType.SMART;
         System.out.println("Test SmartMakeThrow");
@@ -69,10 +69,14 @@ public class ComputerTest
         
         setupThrowHistorian(4);
         computer.makeThrow(null);
-        if(computer.getThrow() ==  Throw.ROCK){
-        assertEquals(Throw.ROCK, computer.getThrow());}
-        else if(computer.getThrow() == Throw.PAPER){
-        assertEquals(Throw.PAPER, computer.getThrow());  }
+        if (computer.getThrow() == Throw.ROCK)
+        {
+        assertEquals(Throw.ROCK, computer.getThrow());
+        }
+        else if (computer.getThrow() == Throw.PAPER)
+        {
+        assertEquals(Throw.PAPER,computer.getThrow());
+        }
         else
         assertEquals(Throw.SCISSORS, computer.getThrow());
         ThrowHistorian.reset();
@@ -149,14 +153,14 @@ public class ComputerTest
                 ThrowHistorian.recordThrows(r, s);
                 ThrowHistorian.recordThrows(p, s);
                 ThrowHistorian.recordThrows(r, p);
-                ThrowHistorian.recordThrows(s, r);
-                ThrowHistorian.recordThrows(p, s);
-                ThrowHistorian.recordThrows(r, s);
+              //  ThrowHistorian.recordThrows(s, r);
+              //  ThrowHistorian.recordThrows(p, s);
+            //    ThrowHistorian.recordThrows(r, s);
                 ThrowHistorian.recordThrows(p, p);
-                ThrowHistorian.recordThrows(r, r);
-                ThrowHistorian.recordThrows(s, s);
+           //     ThrowHistorian.recordThrows(r, r);
+            //    ThrowHistorian.recordThrows(s, s);
                 ThrowHistorian.recordThrows(p, r);
-                ThrowHistorian.recordThrows(r, s);
+            //    ThrowHistorian.recordThrows(r, s);
                 break;
                 
         }

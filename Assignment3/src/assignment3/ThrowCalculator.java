@@ -2,9 +2,9 @@ package assignment3;
 
 /**
  *
+ * Constructs a throw calculator based on the calculator type.
  * @author Hypnocode
- * The ThrowCalculator Class constructs a throw calculator based 
- * on the calculator type.
+ * 
  */
 public abstract class ThrowCalculator 
 {
@@ -12,14 +12,11 @@ public abstract class ThrowCalculator
     {
         switch (type)
         {
-            case RANDOM: 
-                return new ThrowRandom();
-            case SMART:
-                return new ThrowSmart();
+            case RANDOM: return new ThrowRandom();
+            case SMART: return new ThrowSmart();
         }
         return null;
     }
 
     public abstract Throw generateThrow();        
 }
-  

@@ -2,11 +2,11 @@ package assignment3;
 
 /**
 *
+* Enum class of the player's user input method.
 * @author Hypnocode
-* The RequestType class contains the enum type TEXTREQUEST.
+* 
 */
 public enum RequestType
 {
     TEXTREQUEST, GUIREQUEST
 }
-

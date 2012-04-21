@@ -3,9 +3,10 @@ package assignment3;
 import java.util.Scanner;
 
 /**
- * The CommandTextRequest reads the inputs from user then translates it to the
- * commands of the game.
+ * 
+ * Reads the inputs from user then translates it to the commands of the game.
  * @author Hypnocode
+ * 
  */
 public class CommandTextRequest extends CommandRequestor
 {
@@ -51,10 +52,8 @@ public class CommandTextRequest extends CommandRequestor
                 else if (input.equals("quit"))
                     return Command.QUIT;
                 else 
-                {
                     System.out.printf("Unrecognized command. Type 'help' for info.\n");
-                }
             }
-        }
+        } // End of while loop
     }
 }
